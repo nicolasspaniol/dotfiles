@@ -1,0 +1,16 @@
+# Ignore everything
+*
+
+# Except
+!.gitignore
+!.config/
+!.config/helix/
+!.config/helix/**
+!.config/sway/
+!.config/sway/**
+!.config/waybar/
+!.config/waybar/**
+!.config/foot/
+!.config/foot/**
+!lyconfig.ini
+!.zshrc

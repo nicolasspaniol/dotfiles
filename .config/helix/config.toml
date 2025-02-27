@@ -1,0 +1,48 @@
+theme = "ayu_evolve"
+
+[editor]
+rulers = [80]
+mouse = false
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.file-picker]
+git-ignore = true
+
+# A-...    alt
+# C-...    ctrl
+# <space>? for help
+
+# Disables common navigation buttons to get me used to vim mode
+[keys.normal]
+"up" = "no_op"
+"down" = "no_op"
+"left" = "no_op"
+"right" = "no_op"
+"home" = "no_op"
+"end" = "no_op"
+"pageup" = "no_op"
+"pagedown" = "no_op"
+# "d" copies the deleted content by default; I disabled this behaviour
+"d" = "delete_selection_noyank"
+"c" = "change_selection_noyank"
+# Avoid keybind conflict with sway
+"A-;" = "no_op"
+"C-;" = "flip_selections"
+
+# More navigation buttons disabled
+[keys.insert]
+"up" = "no_op"
+"down" = "no_op"
+"left" = "no_op"
+"right" = "no_op"
+"home" = "no_op"
+"end" = "no_op"
+"pageup" = "no_op"
+"pagedown" = "no_op"
+"del" = "no_op"
+
+[keys.normal."g"]
+"k" = "goto_window_top"
+"j" = "goto_window_bottom"

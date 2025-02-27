@@ -1,0 +1,68 @@
+{
+    "height": 30,
+    "spacing": 4,
+    "modules-left": [
+        "sway/workspaces",
+        "sway/scratchpad",
+        "sway/mode"
+    ],
+    "modules-center": [
+        "clock",
+    ],
+    "modules-right": [
+        "network",
+        "pulseaudio",
+        "cpu",
+        "memory",
+        "battery",
+    ],
+    "network": {
+        "format-wifi": " {essid} ",
+        "format-ethernet": " {ifname} ",
+        "tooltip-format-wifi": " {ipaddr} / {signalStrength}% ",
+        "tooltip-format-ethernet": " {ipaddr} ",
+        "format-disconnected": "",
+        "on-click": "swaymsg exec \"foot --title 'wifi' impala\""
+    },
+    "sway/scratchpad": {
+        "format": " hid {count} ",
+    },
+    "pulseaudio": {
+        "format": " {volume}% vol ",
+    },
+    "sway/mode": {
+        "format": " [{}] ",
+    },
+    "clock": {
+        "format": " {:%H:%M} ",
+        "tooltip-format": " {:%d/%m/%Y} ",
+        "interval": 60,
+    },
+    "cpu": {
+        "states": {
+            "high": 90,
+        },
+        "format": " {usage}% cpu ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": " {}% ram "
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format": " {temperatureC}°C ",
+        "tooltip": false
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": " {capacity}%- bat ",
+        "format-full": " {capacity}% bat ",
+        "format-charging": " {capacity}%+ bat ",
+        "format-plugged": " {capacity}% bat ",
+    },
+        "escape": true,
+    }
+}
