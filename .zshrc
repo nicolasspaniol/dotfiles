@@ -23,8 +23,8 @@ alias poff="poweroff"
 alias poffr="poweroff --reboot"
 
 # Default options
-alias ls="ls --color=auto -A -v"
-alias tree="tree -C --gitignore --filesfirst"
+alias ls="ls --color=auto -A -v --group-directories-first"
+alias tree="tree -C --filesfirst"
 alias less="less -R"
 
 # History config
