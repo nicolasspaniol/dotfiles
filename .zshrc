@@ -31,19 +31,20 @@ alias less="less -R"
 alias sudo="sudo -E "
 
 extra() {
-  pwd=$(pwd)
-  cd /tmp
-  git clone https://aur.archlinux.org/$1.git
-  cd $1
-  makepkg -si
-  rm /tmp/$1 -fr
-  cd $pwd
+  git clone "https://aur.archlinux.org/$1.git" "/tmp/extra-$1"
+  makepkg -D "/tmp/extra-$1" -si
+  rm "/tmp/extra-$1" -fr
 }
+
+# https://www.stefanjudis.com/snippets/a-native-shell-alternative-to-the-trash-cli/
+trash() { mv "$@" "$HOME/.local/share/Trash" }
+trashcl() { rm -fr "$HOME"/.local/share/Trash/* }
+trashls() { ls "$HOME/.local/share/Trash" }
 
 # History config
 # https://martinheinz.dev/blog/110
 
-HISTFILE="$HOME/.zsh_history"
+HISTFILE="$HOME/.hist_zsh"
 HISTSIZE=10000000
 SAVEHIST=10000000
 
