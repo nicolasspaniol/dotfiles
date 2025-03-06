@@ -27,6 +27,16 @@ alias ls="ls --color=auto -A -v --group-directories-first"
 alias tree="tree -C --filesfirst"
 alias less="less -R"
 
+extra() {
+  pwd=$(pwd)
+  cd /tmp
+  git clone https://aur.archlinux.org/$1.git
+  cd $1
+  makepkg -si
+  rm /tmp/$1 -fr
+  cd $pwd
+}
+
 # History config
 # https://martinheinz.dev/blog/110
 
