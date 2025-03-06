@@ -26,6 +26,9 @@ alias poffr="poweroff --reboot"
 alias ls="ls --color=auto -A -v --group-directories-first"
 alias tree="tree -C --filesfirst"
 alias less="less -R"
+# The space at the end is necessary for keeping the aliases working
+# https://unix.stackexchange.com/a/349290
+alias sudo="sudo -E "
 
 extra() {
   pwd=$(pwd)
