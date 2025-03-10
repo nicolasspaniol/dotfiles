@@ -1,3 +1,5 @@
+# General settings ------------------------------------------------------------
+
 # Autocomplete
 autoload -Uz compinit
 compinit
@@ -8,6 +10,8 @@ zstyle ":completion:*" matcher-list "m:{A-Za-z}={a-zA-Z}"
 unsetopt BEEP
 
 export PROMPT="%(!.%K{#d6691c} #.%K{#0c7ff2}) %1~%f %k%(!.%F{#d6691c}.%F{#0c7ff2})🭬%f "
+
+# Aliases and functions -------------------------------------------------------
 
 # Shortcuts
 alias su="sudo -E zsh"
@@ -30,16 +34,26 @@ alias less="less -R"
 # https://unix.stackexchange.com/a/349290
 alias sudo="sudo -E "
 
-extra() {
-  git clone "https://aur.archlinux.org/$1.git" "/tmp/extra-$1"
-  makepkg -D "/tmp/extra-$1" -si
-  rm "/tmp/extra-$1" -fr
+# Install packages from AUR
+aur() {
+  tmp="/tmp/aur-$1"
+  git clone "https://aur.archlinux.org/$1.git" $tmp
+  makepkg -si -D $tmp
+  rm -fr $tmp
 }
 
 # https://www.stefanjudis.com/snippets/a-native-shell-alternative-to-the-trash-cli/
 trash() { mv "$@" "$HOME/.local/share/Trash" }
 trashcl() { rm -fr "$HOME"/.local/share/Trash/* }
 trashls() { ls "$HOME/.local/share/Trash" }
+
+# Keyboard bindings -----------------------------------------------------------
+
+# Unbind up/down keys to get me used to navigating the history with Ctrl+P / N
+bindkey -r "^[[A"
+bindkey -r "^[[B"
+
+# History ---------------------------------------------------------------------
 
 # History config
 # https://martinheinz.dev/blog/110
