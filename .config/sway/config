@@ -1,4 +1,4 @@
-set $menu foot --title "launcher" /home/spaniol/.cargo/bin/gyr -r
+set $menu foot --title "launcher" gyr -r
 set $mod Mod1
 set $left h
 set $down j
@@ -118,12 +118,12 @@ bindswitch --reload --locked lid:on output $laptop disable
 bindswitch --reload --locked lid:off output $laptop enable
 
 # Select & screenshot
-bindsym $mod+F10 exec grim -g "$(slurp)" - | wl-copy
+bindsym $mod+F10 exec grim -g "$(slurp)" - | tee "$HOME/Pictures/Screenshots/Screenshot-$(date -Iseconds).png" | wl-copy
 # Screenshot everything
-bindsym $mod+Shift+F10 exec grim - | wl-copy
+bindsym $mod+Shift+F10 exec grim - | tee "$HOME/Pictures/Screenshots/Screenshot-$(date -Iseconds).png" | wl-copy
 
 # Make the launcher a floating window
 for_window [title="^launcher$"] floating enable, resize set width 500 height 430
 for_window [title="^wifi$"] floating enable, resize set width 700 height 700
 
-exec swaybg -i "/home/spaniol/.config/sway/wallpaper.jpg" -m fill
+exec swaybg -i "$HOME/.config/sway/wallpaper.jpg" -m fill
