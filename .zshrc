@@ -24,7 +24,7 @@ alias cmd="nohup foot 1>/dev/null 2>/dev/null &"
 alias temp="paste <(cat /sys/class/thermal/thermal_zone*/type) <(cat /sys/class/thermal/thermal_zone*/temp) | column -s $'\t' -t | sed 's/\(.\)..$/.\1°C/'"
 alias py="python"
 alias poff="poweroff"
-alias poffr="poweroff --reboot"
+alias poffr="reboot"
 
 # Default options
 alias ls="ls --color=auto -A -v --group-directories-first"
@@ -52,6 +52,9 @@ trashls() { ls "$HOME/.local/share/Trash" }
 # Unbind up/down keys to get me used to navigating the history with Ctrl+P / N
 bindkey -r "^[[A"
 bindkey -r "^[[B"
+
+bindkey "^F" forward-word
+bindkey "^B" backward-word
 
 # History ---------------------------------------------------------------------
 
