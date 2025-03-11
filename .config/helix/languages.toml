@@ -2,10 +2,6 @@
 name = "html"
 file-types = ["html", "hbs"]
 
-# testing my own LSP for markdown
-[language-server.lmdown]
-command = "/home/nmspaniol/Documents/code/lua-lsp/main.lua"
-
 [[language]]
 name = "markdown"
 file-types = ["md"]
@@ -17,7 +13,7 @@ auto-format = false
 
 # Snippet system using https://github.com/estin/simple-completion-language-server
 [language-server.scls]
-command = "/home/nmspaniol/.cargo/bin/simple-completion-language-server"
+command = "$HOME/.cargo/bin/simple-completion-language-server"
 
 [language-server.scls.config]
 max_completion_items = 20
@@ -34,3 +30,11 @@ language-servers = [ "scls", "lean" ]
 [language-server.scls.environment]
 RUST_LOG = "info,simple-completion-language-server=info"
 LOG_FILE = "/tmp/completion.log"
+
+[language-server.pylsp]
+command = "pylsp"
+
+[[language]]
+name = "python"
+language-servers = ["pylsp"]
+auto-format = false
