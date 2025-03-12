@@ -12,5 +12,7 @@
 !.config/waybar/**
 !.config/foot/
 !.config/foot/**
+!.config/niri/
+!.config/niri/**
 !lyconfig.ini
 !.zshrc

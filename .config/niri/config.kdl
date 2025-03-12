@@ -1,0 +1,164 @@
+input {
+    keyboard {
+        xkb {
+            layout "us"
+            variant "intl"
+        }
+    }
+
+    touchpad {
+        tap
+        natural-scroll
+        disabled-on-external-mouse
+    }
+
+    // Navigating into another window moves the cursor to its center
+    warp-mouse-to-focus
+}
+
+// Monitor 
+output "eDP-1" {
+    mode "1920x1080@120.035"
+}
+
+layout {
+    gaps 12
+
+    default-column-width {
+        proportion 0.5
+    }
+
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+
+    preset-window-heights {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+        proportion 1.0
+    }
+
+    focus-ring {
+        width 2
+        active-color "#ddd"
+    }
+
+    struts {
+        left 12
+        right 12
+    }
+}
+
+cursor {
+    hide-after-inactive-ms 1000
+    hide-when-typing
+}
+
+screenshot-path "~/Pictures/Screenshots/Screenshot-%Y%m%d-%H%M%S.png"
+
+spawn-at-startup "swaybg" "-i" "\"$HOME/.config/niri/wallpaper.jpg\"" "-m" "fill"
+spawn-at-startup "waybar"
+
+prefer-no-csd
+
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+window-rule {
+    geometry-corner-radius 4
+    clip-to-geometry true
+}
+
+binds {
+    Alt+Return { spawn "foot"; }
+    Alt+Semicolon { spawn "foot" "--title" "launcher" "gyr" "-r"; }
+
+    XF86AudioRaiseVolume { spawn "pactl" "set-sink-volume" "@DEFAULT_SINK@" "+5%"; }
+    XF86AudioLowerVolume { spawn "pactl" "set-sink-volume" "@DEFAULT_SINK@" "-5%"; }
+    XF86AudioMute        { spawn "pactl" "set-sink-mute" "@DEFAULT_SINK@" "toggle"; }
+
+    XF86MonBrightnessDown { spawn "brightnessctl" "set" "5%-"; }
+    XF86MonBrightnessUp { spawn "brightnessctl" "set" "5%+"; }
+
+    Alt+Shift+Q { close-window; }
+
+    Alt+H { focus-column-left; }
+    Alt+J { focus-window-down; }
+    Alt+K { focus-window-up; }
+    Alt+L { focus-column-right; }
+
+    Alt+Shift+H { move-column-left; }
+    Alt+Shift+J { move-window-down; }
+    Alt+Shift+K { move-window-up; }
+    Alt+Shift+L { move-column-right; }
+
+    Alt+1 { focus-workspace 1; }
+    Alt+2 { focus-workspace 2; }
+    Alt+3 { focus-workspace 3; }
+    Alt+4 { focus-workspace 4; }
+    Alt+5 { focus-workspace 5; }
+    Alt+6 { focus-workspace 6; }
+    Alt+7 { focus-workspace 7; }
+    Alt+8 { focus-workspace 8; }
+    Alt+9 { focus-workspace 9; }
+
+    Alt+Shift+1 { move-column-to-workspace 1; }
+    Alt+Shift+2 { move-column-to-workspace 2; }
+    Alt+Shift+3 { move-column-to-workspace 3; }
+    Alt+Shift+4 { move-column-to-workspace 4; }
+    Alt+Shift+5 { move-column-to-workspace 5; }
+    Alt+Shift+6 { move-column-to-workspace 6; }
+    Alt+Shift+7 { move-column-to-workspace 7; }
+    Alt+Shift+8 { move-column-to-workspace 8; }
+    Alt+Shift+9 { move-column-to-workspace 9; }
+
+    Alt+Tab { focus-workspace-previous; }
+
+    // Moves a window left or right, but allows it to be consumed into columns
+    // in its way
+    Alt+N  { consume-or-expel-window-left; }
+    Alt+M { consume-or-expel-window-right; }
+
+    Alt+F { maximize-column; }
+    Alt+Shift+F { fullscreen-window; }
+
+    Alt+C { center-column; }
+
+    // Column width
+    Alt+Minus { set-column-width "-10%"; }
+    Alt+Equal { set-column-width "+10%"; }
+
+    // Window height
+    Alt+Shift+Minus { set-window-height "-10%"; }
+    Alt+Shift+Equal { set-window-height "+10%"; }
+
+    // Floating window behaviour
+    Alt+Shift+W { toggle-window-floating; }
+    Alt+W       { switch-focus-between-floating-and-tiling; }
+
+    // Toggle between the configured window/column heights and widths
+    Alt+R       { switch-preset-column-width; }
+    Alt+Shift+R { switch-preset-window-height; }
+
+    Alt+F10       { screenshot; }
+    Alt+Shift+F10 { screenshot-screen; }
+
+    // Exit Niri (spawns prompt asking for confirmation)
+    Alt+Shift+E { quit; }
+}
+
+// Disable the popup at the startup showing Niri's keybinds
+hotkey-overlay {
+    skip-at-startup
+}
+
+window-rule {
+    match app-id="foot" title="launcher"
+    match app-id="foot" title="wifi"
+    open-floating true
+}
