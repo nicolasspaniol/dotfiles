@@ -22,7 +22,7 @@ output "eDP-1" {
 }
 
 layout {
-    gaps 12
+    gaps 16
 
     default-column-width {
         proportion 0.5
@@ -43,7 +43,7 @@ layout {
 
     focus-ring {
         width 2
-        active-color "#ddd"
+        active-color "#eee"
     }
 
     struts {
@@ -58,9 +58,6 @@ cursor {
 }
 
 screenshot-path "~/Pictures/Screenshots/Screenshot-%Y%m%d-%H%M%S.png"
-
-spawn-at-startup "swaybg" "-i" "\"$HOME/.config/niri/wallpaper.jpg\"" "-m" "fill"
-spawn-at-startup "waybar"
 
 prefer-no-csd
 
@@ -159,6 +156,17 @@ hotkey-overlay {
 
 window-rule {
     match app-id="foot" title="launcher"
+    open-floating true
+    default-window-height { fixed 500; }
+    default-column-width { fixed 600; }
+}
+
+window-rule {
     match app-id="foot" title="wifi"
     open-floating true
+    default-window-height { fixed 700; }
+    default-column-width { fixed 700; }
 }
+
+spawn-at-startup "xwayland-satellite"
+spawn-at-startup "waybar"

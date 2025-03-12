@@ -2,9 +2,8 @@
     "height": 30,
     "spacing": 4,
     "modules-left": [
-        "sway/workspaces",
-        "sway/scratchpad",
-        "sway/mode"
+        "cpu",
+        "memory",
     ],
     "modules-center": [
         "clock",
@@ -12,8 +11,6 @@
     "modules-right": [
         "network",
         "pulseaudio",
-        "cpu",
-        "memory",
         "battery",
     ],
     "network": {
@@ -22,16 +19,16 @@
         "tooltip-format-wifi": " {ipaddr} / {signalStrength}% ",
         "tooltip-format-ethernet": " {ipaddr} ",
         "format-disconnected": "",
-        "on-click": "swaymsg exec \"foot --title 'wifi' impala\""
+        "on-click": "foot --title 'wifi' impala"
     },
     "sway/scratchpad": {
         "format": " hid {count} ",
     },
-    "pulseaudio": {
-        "format": " {volume}% vol ",
-    },
     "sway/mode": {
         "format": " [{}] ",
+    },
+    "pulseaudio": {
+        "format": " {volume}% vol ",
     },
     "clock": {
         "format": " {:%H:%M} ",
