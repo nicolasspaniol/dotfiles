@@ -14,7 +14,7 @@ window#waybar {
 }
 
 #workspaces button:not(.focused) {
-  color: #666;
+  color: #777;
 }
 
 #workspaces button.focused {
@@ -37,8 +37,8 @@ window#waybar {
 }
 
 #pulseaudio.muted {
-  color: #666;
-  box-shadow: inset 0 2px #666;
+  color: #777;
+  box-shadow: inset 0 2px #777;
 }
 
 #cpu.high {

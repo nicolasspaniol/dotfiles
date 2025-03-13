@@ -3,6 +3,7 @@
 
 # Except
 !.gitignore
+
 !.config/
 !.config/helix/
 !.config/helix/**
@@ -14,5 +15,6 @@
 !.config/foot/**
 !.config/niri/
 !.config/niri/**
+
 !lyconfig.ini
 !.zshrc

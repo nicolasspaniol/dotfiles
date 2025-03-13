@@ -47,28 +47,15 @@ layout {
     }
 
     struts {
+        top -8
         left 12
         right 12
     }
 }
 
 cursor {
-    hide-after-inactive-ms 1000
+    hide-after-inactive-ms 1500
     hide-when-typing
-}
-
-screenshot-path "~/Pictures/Screenshots/Screenshot-%Y%m%d-%H%M%S.png"
-
-prefer-no-csd
-
-window-rule {
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
-    open-floating true
-}
-
-window-rule {
-    geometry-corner-radius 4
-    clip-to-geometry true
 }
 
 binds {
@@ -154,19 +141,39 @@ hotkey-overlay {
     skip-at-startup
 }
 
-window-rule {
+screenshot-path "~/Pictures/Screenshots/Screenshot-%Y%m%d-%H%M%S.png"
+
+// Asks new windows to disable its client-side decorations
+prefer-no-csd
+
+window-rule { // Launcher window
     match app-id="foot" title="launcher"
     open-floating true
     default-window-height { fixed 500; }
     default-column-width { fixed 600; }
 }
 
-window-rule {
+window-rule { // Wi-fi manager (for now, impala) window
     match app-id="foot" title="wifi"
     open-floating true
     default-window-height { fixed 700; }
     default-column-width { fixed 700; }
 }
 
+window-rule { // Firefox PiP
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+window-rule { // All windows
+    geometry-corner-radius 4
+    clip-to-geometry true
+}
+
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "waybar"
+
+environment {
+    DISPLAY ":0"
+    MOZ_ENABLE_WAYLAND "1"
+}
