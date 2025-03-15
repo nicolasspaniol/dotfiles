@@ -47,7 +47,7 @@ layout {
     }
 
     struts {
-        top -8
+        top -12
         left 12
         right 12
     }
@@ -111,7 +111,7 @@ binds {
     Alt+F { maximize-column; }
     Alt+Shift+F { fullscreen-window; }
 
-    Alt+C { center-column; }
+    Alt+C { center-window; }
 
     // Column width
     Alt+Minus { set-column-width "-10%"; }
