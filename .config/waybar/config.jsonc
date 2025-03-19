@@ -19,7 +19,7 @@
         "tooltip-format-wifi": " {ipaddr} / {signalStrength}% ",
         "tooltip-format-ethernet": " {ipaddr} ",
         "format-disconnected": "",
-        "on-click": "foot --title 'wifi' impala"
+        "on-click": "foot --title 'wifi' nmtui"
     },
     "sway/scratchpad": {
         "format": " hid {count} ",
