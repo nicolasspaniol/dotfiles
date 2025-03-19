@@ -1,8 +1,10 @@
 input {
     keyboard {
         xkb {
-            layout "us"
-            variant "intl"
+            // Change keyboard
+            layout "us,us"
+            variant "intl,workman-intl"
+            options "grp:alt_space_toggle"
         }
     }
 
@@ -129,8 +131,8 @@ binds {
     Alt+R       { switch-preset-column-width; }
     Alt+Shift+R { switch-preset-window-height; }
 
-    Alt+F10       { screenshot; }
-    Alt+Shift+F10 { screenshot-screen; }
+    Alt+F10       { spawn ".local/bin/screenshot"; }
+    Alt+Shift+F10 { spawn ".local/bin/screenshot_all"; }
 
     // Exit Niri (spawns prompt asking for confirmation)
     Alt+Shift+E { quit; }
@@ -153,7 +155,7 @@ window-rule { // Launcher window
     default-column-width { fixed 600; }
 }
 
-window-rule { // Wi-fi manager (for now, impala) window
+window-rule { // Wi-fi manager window
     match app-id="foot" title="wifi"
     open-floating true
     default-window-height { fixed 700; }
