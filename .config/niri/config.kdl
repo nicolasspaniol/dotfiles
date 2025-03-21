@@ -3,7 +3,7 @@ input {
         xkb {
             // Change keyboard
             layout "us,us"
-            variant "intl,workman-intl"
+            variant "intl,colemak"
             options "grp:alt_space_toggle,caps:swapescape"
         }
     }
