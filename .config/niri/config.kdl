@@ -53,6 +53,8 @@ layout {
         left 12
         right 12
     }
+
+    always-center-single-column
 }
 
 cursor {
