@@ -13,6 +13,8 @@
 !.config/waybar/**
 !.config/foot/
 !.config/foot/**
+!.config/firefox/
+!.config/firefox/**
 !.config/niri/
 !.config/niri/**
 
