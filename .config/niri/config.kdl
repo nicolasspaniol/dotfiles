@@ -63,8 +63,8 @@ cursor {
 }
 
 binds {
-    Alt+Return { spawn "foot"; }
-    Alt+Semicolon { spawn "foot" "--title" "launcher" "gyr" "-r"; }
+    Alt+Return repeat=false { spawn "foot"; }
+    Alt+Escape repeat=false { spawn "foot" "--title" "launcher" "gyr" "--nosway" "-r"; }
 
     XF86AudioRaiseVolume { spawn "pactl" "set-sink-volume" "@DEFAULT_SINK@" "+5%"; }
     XF86AudioLowerVolume { spawn "pactl" "set-sink-volume" "@DEFAULT_SINK@" "-5%"; }
@@ -75,10 +75,12 @@ binds {
 
     Alt+Shift+Q { close-window; }
 
+    Alt+G { focus-column-first; }
     Alt+H { focus-column-left; }
     Alt+J { focus-window-down; }
     Alt+K { focus-window-up; }
     Alt+L { focus-column-right; }
+    Alt+Semicolon { focus-column-last; }
 
     Alt+Shift+H { move-column-left; }
     Alt+Shift+J { move-window-down; }
@@ -133,8 +135,8 @@ binds {
     Alt+R       { switch-preset-column-width; }
     Alt+Shift+R { switch-preset-window-height; }
 
-    Alt+F10       { spawn ".local/bin/screenshot"; }
-    Alt+Shift+F10 { spawn ".local/bin/screenshot_all"; }
+    Alt+F10       repeat=false { spawn ".local/bin/screenshot"; }
+    Alt+Shift+F10 repeat=false { spawn ".local/bin/screenshot_all"; }
 
     // Exit Niri (spawns prompt asking for confirmation)
     Alt+Shift+E { quit; }
