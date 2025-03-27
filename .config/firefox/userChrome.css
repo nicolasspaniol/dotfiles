@@ -1,3 +1,7 @@
 html { min-width: 0 !important; }
-#page-action-buttons, #tracking-protection-icon-container { display: none !important }
-.titlebar-buttonbox-container { display: none; }
+
+.titlebar-buttonbox-container,
+#page-action-buttons,
+#tracking-protection-icon-container {
+  display: none !important;
+}
