@@ -33,6 +33,7 @@ alias less="less -R"
 # The space at the end is necessary for keeping the aliases working
 # https://unix.stackexchange.com/a/349290
 alias sudo="sudo -E "
+alias fd="fd -I "
 
 # Install packages from AUR
 aur() {

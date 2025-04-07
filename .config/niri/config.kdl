@@ -107,7 +107,7 @@ binds {
     Alt+Shift+8 { move-column-to-workspace 8; }
     Alt+Shift+9 { move-column-to-workspace 9; }
 
-    Alt+Tab { focus-workspace-previous; }
+    Alt+Tab repeat=false { focus-workspace-previous; }
 
     // Moves a window left or right, but allows it to be consumed into columns
     // in its way
