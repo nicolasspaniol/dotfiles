@@ -4,7 +4,7 @@ input {
             // Change keyboard
             layout "us,us"
             variant "intl,colemak"
-            options "grp:alt_space_toggle,caps:swapescape"
+            options "caps:swapescape"
         }
     }
 
@@ -58,13 +58,14 @@ layout {
 }
 
 cursor {
-    hide-after-inactive-ms 1500
+    hide-after-inactive-ms 1000
     hide-when-typing
 }
 
 binds {
     Alt+Return repeat=false { spawn "foot"; }
     Alt+Escape repeat=false { spawn "foot" "--title" "launcher" "gyr" "--nosway" "-r"; }
+    Alt+Space repeat=false { toggle-overview; }
 
     XF86AudioRaiseVolume { spawn "pactl" "set-sink-volume" "@DEFAULT_SINK@" "+5%"; }
     XF86AudioLowerVolume { spawn "pactl" "set-sink-volume" "@DEFAULT_SINK@" "-5%"; }
