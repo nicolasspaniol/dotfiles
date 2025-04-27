@@ -59,6 +59,7 @@
         "format-full": " {capacity}% bat ",
         "format-charging": " {capacity}%+ bat ",
         "format-plugged": " {capacity}% bat ",
+        "interval": 2,
     },
         "escape": true,
     }
