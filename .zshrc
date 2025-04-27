@@ -35,14 +35,6 @@ alias less="less -R"
 alias sudo="sudo -E "
 alias fd="fd -I "
 
-# Install packages from AUR
-aur() {
-  tmp="/tmp/aur-$1"
-  git clone "https://aur.archlinux.org/$1.git" $tmp
-  makepkg -si -D $tmp
-  rm -fr $tmp
-}
-
 # https://www.stefanjudis.com/snippets/a-native-shell-alternative-to-the-trash-cli/
 trash() { mv "$@" "$HOME/.local/share/Trash" }
 trashcl() { rm -fr "$HOME"/.local/share/Trash/* }
