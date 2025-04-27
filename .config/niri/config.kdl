@@ -18,6 +18,12 @@ input {
     warp-mouse-to-focus
 }
 
+gestures {
+    hot-corners {
+        off
+    }
+}
+
 // Monitor 
 output "eDP-1" {
     mode "1920x1080@120.035"
