@@ -1,0 +1,7 @@
+@-moz-document
+  url-prefix(about:newtab),
+  url-prefix(about:home) {
+    .newtab-main div.body-wrapper {
+      display: none !important;
+    }
+}

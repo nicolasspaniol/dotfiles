@@ -5,3 +5,40 @@ html { min-width: 0 !important; }
 #tracking-protection-icon-container {
   display: none !important;
 }
+
+/* Ctrl+Tab menu */
+
+.ctrlTab-preview .ctrlTab-canvas {
+  display: none !important;
+}
+
+#ctrlTab-previews {
+  flex-direction: column !important;
+  gap: 20px;
+}
+
+#ctrlTab-panel {
+  width: max-content !important;
+
+  transition: none !important;
+
+  left: unset !important;
+  right: unset !important;
+  top: unset !important;
+  bottom: unset !important;
+}
+
+.ctrlTab-preview-inner {
+  width: 500px;
+  flex-direction: row;
+}
+
+.ctrlTab-favicon {
+  margin-top: 0 !important;
+}
+
+.ctrlTab-label {
+  justify-content: left !important;
+  padding-left: 20px;
+  padding-top: 13px;
+}
