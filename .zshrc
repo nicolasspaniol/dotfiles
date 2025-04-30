@@ -25,6 +25,7 @@ alias temp="paste <(cat /sys/class/thermal/thermal_zone*/type) <(cat /sys/class/
 alias py="python"
 alias poff="poweroff"
 alias poffr="reboot"
+alias venv="source .venv/bin/activate" # Because I use too much Python
 
 # Default options
 alias ls="ls --color=auto -A -v --group-directories-first"
