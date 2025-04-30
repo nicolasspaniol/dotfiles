@@ -1,286 +1,286 @@
 {
     "exists": {
-        "prefix": "\\exists",
+        "prefix": "exists",
         "body": "∃",
         "description": "Exists"
     },
     "forall": {
-        "prefix": "\\forall",
+        "prefix": "forall",
         "body": "∀",
         "description": "For all"
     },
     "and": {
-        "prefix": "\\and",
+        "prefix": "and",
         "body": "∧",
         "description": "And"
     },
     "or": {
-        "prefix": "\\or",
+        "prefix": "or",
         "body": "∨",
         "description": "Or"
     },
     "not": {
-        "prefix": "\\not",
+        "prefix": "not",
         "body": "¬",
         "description": "Not"
     },
     "implies": {
-        "prefix": "\\implies",
+        "prefix": "implies",
         "body": "→",
         "description": "Implies"
     },
     "iff": {
-        "prefix": "\\iff",
+        "prefix": "iff",
         "body": "↔",
         "description": "If and only if"
     },
     "eq": {
-        "prefix": "\\eq",
+        "prefix": "eq",
         "body": "＝",
         "description": "Equal"
     },
     "neq": {
-        "prefix": "\\neq",
+        "prefix": "neq",
         "body": "≠",
         "description": "Not equal"
     },
     "le": {
-        "prefix": "\\le",
+        "prefix": "le",
         "body": "≤",
         "description": "Less than or equal"
     },
     "ge": {
-        "prefix": "\\ge",
+        "prefix": "ge",
         "body": "≥",
         "description": "Greater than or equal"
     },
     "subset": {
-        "prefix": "\\subset",
+        "prefix": "subset",
         "body": "⊆",
         "description": "Subset"
     },
     "superset": {
-        "prefix": "\\superset",
+        "prefix": "superset",
         "body": "⊇",
         "description": "Superset"
     },
     "in": {
-        "prefix": "\\in",
+        "prefix": "in",
         "body": "∈",
         "description": "Element of"
     },
     "notin": {
-        "prefix": "\\notin",
+        "prefix": "notin",
         "body": "∉",
         "description": "Not element of"
     },
     "union": {
-        "prefix": "\\union",
+        "prefix": "union",
         "body": "∪",
         "description": "Union"
     },
     "intersection": {
-        "prefix": "\\intersection",
+        "prefix": "intersection",
         "body": "∩",
         "description": "Intersection"
     },
     "empty": {
-        "prefix": "\\empty",
+        "prefix": "empty",
         "body": "∅",
         "description": "Empty set"
     },
     "alpha": {
-        "prefix": "\\alpha",
+        "prefix": "alpha",
         "body": "α",
         "description": "Greek letter alpha"
     },
     "beta": {
-        "prefix": "\\beta",
+        "prefix": "beta",
         "body": "β",
         "description": "Greek letter beta"
     },
     "gamma": {
-        "prefix": "\\gamma",
+        "prefix": "gamma",
         "body": "γ",
         "description": "Greek letter gamma"
     },
     "delta": {
-        "prefix": "\\delta",
+        "prefix": "delta",
         "body": "δ",
         "description": "Greek letter delta"
     },
     "epsilon": {
-        "prefix": "\\epsilon",
+        "prefix": "epsilon",
         "body": "ε",
         "description": "Greek letter epsilon"
     },
     "theta": {
-        "prefix": "\\theta",
+        "prefix": "theta",
         "body": "θ",
         "description": "Greek letter theta"
     },
     "lambda": {
-        "prefix": "\\lambda",
+        "prefix": "lambda",
         "body": "λ",
         "description": "Greek letter lambda"
     },
     "pi": {
-        "prefix": "\\pi",
+        "prefix": "pi",
         "body": "π",
         "description": "Greek letter pi"
     },
     "sigma": {
-        "prefix": "\\sigma",
+        "prefix": "sigma",
         "body": "σ",
         "description": "Greek letter sigma"
     },
     "phi": {
-        "prefix": "\\phi",
+        "prefix": "phi",
         "body": "φ",
         "description": "Greek letter phi"
     },
     "omega": {
-        "prefix": "\\omega",
+        "prefix": "omega",
         "body": "ω",
         "description": "Greek letter omega"
     },
     "compose": {
-        "prefix": "\\compose",
+        "prefix": "compose",
         "body": "∘",
         "description": "Function composition"
     },
     "larr": {
-        "prefix": "\\larr",
+        "prefix": "larr",
         "body": "←",
         "description": "Left arrow (used in definitions or implications)"
     },
     "sub1": {
-        "prefix": "\\sub1",
+        "prefix": "sub1",
         "body": "₁",
         "description": "Subscript 1"
     },
     "sub2": {
-        "prefix": "\\sub2",
+        "prefix": "sub2",
         "body": "₂",
         "description": "Subscript 2"
     },
     "subn": {
-        "prefix": "\\subn",
+        "prefix": "subn",
         "body": "ₙ",
         "description": "Subscript n"
     },
     "subm": {
-        "prefix": "\\subm",
+        "prefix": "subm",
         "body": "ₘ",
         "description": "Subscript m"
     },
     "naturals": {
-        "prefix": "\\naturals",
+        "prefix": "naturals",
         "body": "ℕ",
         "description": "Natural numbers"
     },
     "integers": {
-        "prefix": "\\integers",
+        "prefix": "integers",
         "body": "ℤ",
         "description": "Integers"
     },
     "rationals": {
-        "prefix": "\\rationals",
+        "prefix": "rationals",
         "body": "ℚ",
         "description": "Rational numbers"
     },
     "reals": {
-        "prefix": "\\reals",
+        "prefix": "reals",
         "body": "ℝ",
         "description": "Real numbers"
     },
     "complex": {
-        "prefix": "\\complex",
+        "prefix": "complex",
         "body": "ℂ",
         "description": "Complex numbers"
     },
     "ellipsis": {
-        "prefix": "\\ellipsis",
+        "prefix": "ellipsis",
         "body": "…",
         "description": "Ellipsis"
     },
     "infinity": {
-        "prefix": "\\infinity",
+        "prefix": "infinity",
         "body": "∞",
         "description": "Infinity"
     },
     "approx": {
-        "prefix": "\\approx",
+        "prefix": "approx",
         "body": "≈",
         "description": "Approximately equal"
     },
     "partial_derivative": {
-        "prefix": "\\partial_derivative",
+        "prefix": "partial_derivative",
         "body": "∂",
         "description": "Partial derivative"
     },
     "times": {
-        "prefix": "\\times",
+        "prefix": "times",
         "body": "×",
         "description": "Multiplication (times)"
     },
     "cdot": {
-        "prefix": "\\cdot",
+        "prefix": "cdot",
         "body": "⋅",
         "description": "Dot product or multiplication (cdot)"
     },
     "subi": {
-        "prefix": "\\subi",
+        "prefix": "subi",
         "body": "ᵢ",
         "description": "Subscript i"
     },
     "subj": {
-        "prefix": "\\subj",
+        "prefix": "subj",
         "body": "ⱼ",
         "description": "Subscript j"
     },
     "subk": {
-        "prefix": "\\subk",
+        "prefix": "subk",
         "body": "ₖ",
         "description": "Subscript k"
     },
     "sup2": {
-        "prefix": "\\sup2",
+        "prefix": "sup2",
         "body": "²",
         "description": "Superscript 2"
     },
     "sup3": {
-        "prefix": "\\sup3",
+        "prefix": "sup3",
         "body": "³",
         "description": "Superscript 3"
     },
     "supm": {
-        "prefix": "\\supm",
+        "prefix": "supm",
         "body": "ᵐ",
         "description": "Superscript m"
     },
     "supn": {
-        "prefix": "\\supn",
+        "prefix": "supn",
         "body": "ⁿ",
         "description": "Superscript n"
     },
     "supk": {
-        "prefix": "\\supk",
+        "prefix": "supk",
         "body": "ᵏ",
         "description": "Superscript k"
     },
     "lbracket": {
-        "prefix": "\\lb",
+        "prefix": "lb",
         "body": "⟨",
         "description": "Left angle bracket"
     },
     "rbracket": {
-        "prefix": "\\rb",
+        "prefix": "rb",
         "body": "⟩",
         "description": "Right angle bracket"
     },
     "brackets": {
-        "prefix": "\\ll",
+        "prefix": "ll",
         "body": "⟨⟩",
         "description": "Left and right angle brackets"
     }
