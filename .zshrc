@@ -9,7 +9,12 @@ zstyle ":completion:*" matcher-list "m:{A-Za-z}={a-zA-Z}"
 # Disables the annoying beep sound
 unsetopt BEEP
 
-export PROMPT="%(!.%K{#d6691c} #.%K{#0c7ff2}) %1~%f %k%(!.%F{#d6691c}.%F{#0c7ff2})🭬%f "
+# Necessary over SSH
+# https://stackoverflow.com/a/57805911/12712114
+export TERM=xterm
+
+[[ $SSH_CONNECTION ]] && local sship="$(echo $SSH_CONNECTION | cut -d ' ' -f3):"
+export PROMPT="%(!.%K{#d6691c} #.%K{#0c7ff2}) ${sship}%1~%f %k%(!.%F{#d6691c}.%F{#0c7ff2})🭬%f "
 
 # Aliases and functions -------------------------------------------------------
 
