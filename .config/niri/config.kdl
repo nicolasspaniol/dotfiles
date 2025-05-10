@@ -4,7 +4,7 @@ input {
             // Change keyboard
             layout "us,us"
             variant "intl,colemak"
-            options "caps:swapescape"
+            options "caps:swapescape,numpad:mac"
         }
     }
 
