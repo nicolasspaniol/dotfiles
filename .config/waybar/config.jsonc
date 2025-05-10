@@ -33,7 +33,7 @@
     "clock": {
         "format": " {:%H:%M} ",
         "tooltip-format": " {:%d/%m/%Y} ",
-        "interval": 60,
+        "interval": 10,
     },
     "cpu": {
         "states": {
@@ -59,7 +59,7 @@
         "format-full": " {capacity}% bat ",
         "format-charging": " {capacity}%+ bat ",
         "format-plugged": " {capacity}% bat ",
-        "interval": 2,
+        "interval": 1,
     },
         "escape": true,
     }
