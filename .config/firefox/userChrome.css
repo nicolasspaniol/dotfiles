@@ -1,5 +1,6 @@
 html { min-width: 0 !important; }
 
+/* Hide some unimportant stuff from the toolbar */
 .titlebar-buttonbox-container,
 #page-action-buttons,
 #tracking-protection-icon-container {
@@ -41,4 +42,14 @@ html { min-width: 0 !important; }
   justify-content: left !important;
   padding-left: 20px;
   padding-top: 13px;
+}
+
+/* Hide bottommost icons in the collapsed sidebar  */
+button[title^="Bitwarden"], button[title="Customize sidebar"] {
+  display: none !important;
+} 
+
+/* Hide "music playing" icon on tabs */
+image.tab-icon-overlay[soundplaying] {
+  display: none !important;
 }
