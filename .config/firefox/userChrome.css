@@ -53,3 +53,14 @@ button[title^="Bitwarden"], button[title="Customize sidebar"] {
 image.tab-icon-overlay[soundplaying] {
   display: none !important;
 }
+
+/* Align the sidebar button to the sidebar icons */
+#sidebar-button {
+  padding-left: 11px !important;
+  padding-right: 11px !important;
+}
+
+/* Cause I have a keyboard */
+#back-button, #forward-button {
+  display: none !important;
+}
