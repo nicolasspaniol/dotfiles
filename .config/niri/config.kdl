@@ -61,6 +61,7 @@ layout {
     }
 
     always-center-single-column
+    background-color "transparent"
 }
 
 cursor {
@@ -181,6 +182,25 @@ window-rule { // Firefox PiP
 window-rule { // All windows
     geometry-corner-radius 4
     clip-to-geometry true
+}
+
+// Make swaybg and waybar both stay in place when I change workspaces
+layer-rule {
+    match namespace="^wallpaper$"
+    match namespace="waybar"
+    match at-startup=true
+
+    place-within-backdrop true
+}
+
+overview {
+    workspace-shadow {
+        softness 50
+        spread 50
+        offset x=0 y=0
+        color "#00000044"
+        
+    }
 }
 
 spawn-at-startup "xwayland-satellite"
