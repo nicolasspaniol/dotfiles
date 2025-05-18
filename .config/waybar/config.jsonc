@@ -2,8 +2,7 @@
     "height": 30,
     "spacing": 4,
     "modules-left": [
-        "cpu",
-        "memory",
+        "niri/workspaces",
     ],
     "modules-center": [
         "clock",
@@ -20,6 +19,9 @@
         "tooltip-format-ethernet": " {ipaddr} ",
         "format-disconnected": "",
         "on-click": "foot --title 'wifi' nmtui"
+    },
+    "niri/workspaces": {
+        "disable-click": true
     },
     "sway/scratchpad": {
         "format": " hid {count} ",

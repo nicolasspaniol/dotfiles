@@ -184,7 +184,6 @@ window-rule { // All windows
 }
 
 spawn-at-startup "xwayland-satellite"
-spawn-at-startup "waybar"
 
 environment {
     DISPLAY ":0"

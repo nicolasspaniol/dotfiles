@@ -14,16 +14,17 @@ window#waybar {
 }
 
 #workspaces button:not(.focused) {
-  color: #6bb;
+  color: rgba(150,230,255,.7);
 }
 
 #workspaces button.focused {
-  color: #264de7;
-  box-shadow: inset 0 2px #264de7;
+  color: white;
+  box-shadow: inset 0 2px white;
 }
 
-#workspaces button:hover {
-  background: black;
+#workspaces button.empty:not(.focused) {
+    /* visibility:hidden; and display:none; are not available */
+    color: transparent;
 }
 
 #battery.warning:not(.charging) {
@@ -37,8 +38,7 @@ window#waybar {
 }
 
 #pulseaudio.muted {
-  /* color: #6bb; */
-  color: rgba(150,230,255,.5);
+  color: rgba(150,230,255,.7);
   box-shadow: inset 0 2px rgba(150,230,255,.5);
 }
 

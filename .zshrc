@@ -26,7 +26,6 @@ alias cl="clear"
 alias hx="helix"
 alias open="xdg-open"
 alias cmd="nohup foot 1>/dev/null 2>/dev/null &"
-alias temp="paste <(cat /sys/class/thermal/thermal_zone*/type) <(cat /sys/class/thermal/thermal_zone*/temp) | column -s $'\t' -t | sed 's/\(.\)..$/.\1°C/'"
 alias py="python"
 alias poff="poweroff"
 alias poffr="reboot"
@@ -36,10 +35,11 @@ alias venv="source .venv/bin/activate" # Because I use too much Python
 alias ls="ls --color=auto -A -v --group-directories-first"
 alias tree="tree -C --filesfirst"
 alias less="less -R"
-# The space at the end is necessary for keeping the aliases working
+# The space at the end is necessary for keeping the aliases functional
 # https://unix.stackexchange.com/a/349290
 alias sudo="sudo -E "
 alias fd="fd -I "
+alias rg="rg -p --no-ignore"
 
 # https://www.stefanjudis.com/snippets/a-native-shell-alternative-to-the-trash-cli/
 trash() { mv "$@" "$HOME/.local/share/Trash" }
