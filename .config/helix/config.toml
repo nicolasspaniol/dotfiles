@@ -14,8 +14,8 @@ git-ignore = true
 # C-...    ctrl
 # <space>? for help
 
-# Disables common navigation buttons to get me used to vim mode
 [keys.normal]
+# Disables common navigation buttons to get me used to vim mode
 "up" = "no_op"
 "down" = "no_op"
 "left" = "no_op"
@@ -30,6 +30,7 @@ git-ignore = true
 # Avoid keybind conflict with sway
 "A-;" = "no_op"
 "C-;" = "flip_selections"
+"\\" = "goto_word"
 
 # More navigation buttons disabled
 [keys.insert]
@@ -44,5 +45,6 @@ git-ignore = true
 "del" = "no_op"
 
 [keys.normal."g"]
+"w" = "no_op" # Default for goto_word
 "k" = "goto_window_top"
 "j" = "goto_window_bottom"
