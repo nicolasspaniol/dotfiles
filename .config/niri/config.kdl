@@ -60,6 +60,18 @@ layout {
         right 12
     }
 
+    tab-indicator {
+        active-color "#eee"
+        inactive-color "#96e7ff88"
+        width 6
+        gap 6
+        corner-radius 10
+        gaps-between-tabs 8
+        length total-proportion=0.2
+        place-within-column
+        hide-when-single-tab
+    }
+
     always-center-single-column
     background-color "transparent"
 }
@@ -121,6 +133,7 @@ binds {
     // in its way
     Alt+N  { consume-or-expel-window-left; }
     Alt+M { consume-or-expel-window-right; }
+    Alt+T { toggle-column-tabbed-display; }
 
     Alt+F { maximize-column; }
     Alt+Shift+F { fullscreen-window; }
@@ -199,7 +212,6 @@ overview {
         spread 50
         offset x=0 y=0
         color "#00000044"
-        
     }
 }
 
