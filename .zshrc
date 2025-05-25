@@ -1,5 +1,7 @@
 # General settings ------------------------------------------------------------
 
+export PATH="$HOME/.cargo/bin:$HOME/.elan/bin:$HOME/.local/bin:$PATH"
+
 # Autocomplete
 autoload -Uz compinit
 compinit
