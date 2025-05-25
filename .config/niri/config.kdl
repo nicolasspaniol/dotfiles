@@ -6,6 +6,7 @@ input {
             variant "intl,colemak"
             options "caps:swapescape,numpad:mac"
         }
+        numlock
     }
 
     touchpad {
