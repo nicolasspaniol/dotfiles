@@ -1,0 +1,4 @@
+ac_add_options --with-ccache=sccache
+ac_add_options --disable-tests
+ac_add_options --enable-release
+mk_add_options MOZ_PARALLEL_BUILD=4
