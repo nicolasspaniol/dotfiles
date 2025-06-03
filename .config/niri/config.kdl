@@ -83,6 +83,8 @@ cursor {
 }
 
 binds {
+    Alt+Y { toggle-windowed-fullscreen; }
+
     Alt+Return repeat=false { spawn "foot"; }
     Alt+Escape repeat=false { spawn "foot" "--title" "launcher" "gyr" "--nosway" "-r"; }
     Alt+Space repeat=false { toggle-overview; }
@@ -91,7 +93,7 @@ binds {
     XF86AudioLowerVolume { spawn "pactl" "set-sink-volume" "@DEFAULT_SINK@" "-5%"; }
     XF86AudioMute        { spawn "pactl" "set-sink-mute" "@DEFAULT_SINK@" "toggle"; }
 
-    XF86MonBrightnessDown { spawn "brightnessctl" "set" "5%-"; }
+    XF86MonBrightnessDown { spawn "brightnessctl" "set" "5%-" "-n"; }
     XF86MonBrightnessUp { spawn "brightnessctl" "set" "5%+"; }
 
     Alt+Shift+Q { close-window; }
@@ -103,10 +105,12 @@ binds {
     Alt+L { focus-column-right; }
     Alt+Semicolon { focus-column-last; }
 
+    Alt+Shift+G { move-column-to-first; }
     Alt+Shift+H { move-column-left; }
     Alt+Shift+J { move-window-down; }
     Alt+Shift+K { move-window-up; }
     Alt+Shift+L { move-column-right; }
+    Alt+Shift+Semicolon { move-column-to-last; }
 
     Alt+1 { focus-workspace 1; }
     Alt+2 { focus-workspace 2; }
