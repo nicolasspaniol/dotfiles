@@ -86,7 +86,7 @@ binds {
     Alt+Y { toggle-windowed-fullscreen; }
 
     Alt+Return repeat=false { spawn "foot"; }
-    Alt+Escape repeat=false { spawn "foot" "--title" "launcher" "gyr" "--nosway" "-r"; }
+    Alt+Escape repeat=false { spawn "foot" "--title" "floating" "gyr" "--nosway" "-r"; }
     Alt+Space repeat=false { toggle-overview; }
 
     XF86AudioRaiseVolume { spawn "pactl" "set-sink-volume" "@DEFAULT_SINK@" "+5%"; }
@@ -178,15 +178,8 @@ screenshot-path "~/Pictures/Screenshots/Screenshot-%Y%m%d-%H%M%S.png"
 // Asks new windows to disable its client-side decorations
 prefer-no-csd
 
-window-rule { // Launcher window
-    match app-id="foot" title="launcher"
-    open-floating true
-    default-window-height { fixed 500; }
-    default-column-width { fixed 600; }
-}
-
 window-rule { // Wi-fi manager window
-    match app-id="foot" title="wifi"
+    match app-id="foot" title="floating"
     open-floating true
     default-window-height { fixed 700; }
     default-column-width { fixed 700; }
