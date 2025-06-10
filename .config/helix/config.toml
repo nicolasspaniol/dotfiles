@@ -30,7 +30,7 @@ git-ignore = true
 # Avoid keybind conflict with sway
 "A-;" = "no_op"
 "C-;" = "flip_selections"
-"\\" = "goto_word"
+"esc" = "goto_word"
 
 # More navigation buttons disabled
 [keys.insert]
@@ -48,3 +48,5 @@ git-ignore = true
 "w" = "no_op" # Default for goto_word
 "k" = "goto_window_top"
 "j" = "goto_window_bottom"
+"b" = "no_op" # Defaults for goto_window_top/bottom
+"t" = "no_op"
