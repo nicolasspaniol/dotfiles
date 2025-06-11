@@ -32,6 +32,7 @@ alias py="python"
 alias poff="poweroff"
 alias poffr="reboot"
 alias venv="source .venv/bin/activate" # Because I use too much Python
+alias gs="git status"
 
 # Default options
 alias ls="ls --color=auto -A -v --group-directories-first"
