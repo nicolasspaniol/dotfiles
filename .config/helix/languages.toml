@@ -1,4 +1,14 @@
 [[language]]
+name = "typst"
+language-servers = ["tinymist"]
+
+[language-server.tinymist]
+command = "tinymist"
+[language-server.tinymist.config]
+preview.background.enabled = true
+preview.background.args = ["--invert-colors=never"]
+
+[[language]]
 name = "html"
 file-types = ["html", "hbs"]
 
