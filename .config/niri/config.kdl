@@ -214,7 +214,6 @@ overview {
 }
 
 spawn-at-startup "xwayland-satellite"
-spawn-at-startup "foot" "-D" "log" "--title" "floating" "helix" "~/log/log.md"
 
 environment {
     DISPLAY ":0"
