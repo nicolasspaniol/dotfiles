@@ -33,6 +33,7 @@ alias poff="poweroff"
 alias poffr="reboot"
 alias venv="source .venv/bin/activate" # Because I use too much Python
 alias gs="git status"
+alias mirror="wl-mirror $(niri msg -j outputs | jq 'keys[0]' -Mr)"
 
 # Default options
 alias ls="ls --color=auto -A -v --group-directories-first"
