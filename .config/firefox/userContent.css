@@ -4,4 +4,9 @@
     .newtab-main div.body-wrapper {
       display: none !important;
     }
+
+    .logo-and-wordmark {
+      box-shadow: 0 0 100px black;
+      background: rgba(0, 0, 0, .29);
+    }
 }
