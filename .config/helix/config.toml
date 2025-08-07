@@ -30,7 +30,9 @@ git-ignore = true
 # Avoid keybind conflict with sway
 "A-;" = "no_op"
 "C-;" = "flip_selections"
+
 "esc" = "goto_word"
+"D" = "copy_selection_on_prev_line"
 
 # See https://github.com/helix-editor/helix/pull/8147
 w = "move_next_long_word_start"
