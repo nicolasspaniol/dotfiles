@@ -16,7 +16,9 @@ unsetopt BEEP
 export TERM=xterm
 
 [[ $SSH_CONNECTION ]] && local sship="$(echo $SSH_CONNECTION | cut -d ' ' -f3):"
-export PROMPT="%(!.%K{#d6691c} #.%K{#0c7ff2}) ${sship}%1~%f %k%(!.%F{#d6691c}.%F{#0c7ff2})🭬%f "
+local orange="#d6691c"
+local blue="#0c7ff2"
+export PROMPT="%(!.%K{$orange} #.%K{$blue}) $sship%1~%f %k%(!.%F{$orange}.%F{$blue})🭬%f "
 
 # Aliases and functions -------------------------------------------------------
 
@@ -27,14 +29,14 @@ alias q="exit"
 alias cl="clear"
 alias hx="helix"
 alias open="xdg-open"
-# Opens foot in another process without displaying any message
-alias cmd="read < <(nohup foot > /dev/null 2>&1 &)"
-alias py="python"
+alias py="python || python3"
 alias poff="poweroff"
 alias poffr="reboot"
 alias venv="source .venv/bin/activate" # Because I use too much Python
 alias gs="git status"
-alias mirror="wl-mirror $(niri msg -j outputs | jq 'keys[0]' -Mr)"
+[[ ! $SSH_CONNECTION ]] && alias mirror="wl-mirror $(niri msg -j outputs | jq 'keys[0]' -Mr)"
+# Opens foot in another process without displaying any message
+[[ ! $SSH_CONNECTION ]] && alias cmd="read < <(nohup foot > /dev/null 2>&1 &)"
 
 # Default options
 alias ls="ls --color=auto -A -v --group-directories-first"
