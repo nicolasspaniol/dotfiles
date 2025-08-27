@@ -2,6 +2,12 @@
 
 export PATH="$HOME/.cargo/bin:$HOME/.elan/bin:$HOME/.local/bin:$PATH"
 
+export EDITOR=helix
+
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey "^Y" edit-command-line
+
 # Autocomplete
 autoload -Uz compinit
 compinit
