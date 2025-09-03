@@ -69,3 +69,7 @@ image.tab-icon-overlay[soundplaying] {
 #back-button, #forward-button {
   display: none !important;
 }
+
+#tabbrowser-tabbox {
+  box-shadow: none !important;
+}
