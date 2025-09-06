@@ -49,6 +49,9 @@ e = "extend_next_word_end"
 W = "extend_next_sub_word_start"
 B = "extend_prev_sub_word_start"
 E = "extend_next_sub_word_end"
+# "d" copies the deleted content by default; I disabled this behaviour
+"d" = "delete_selection_noyank"
+"c" = "change_selection_noyank"
 
 # More navigation buttons disabled
 [keys.insert]
