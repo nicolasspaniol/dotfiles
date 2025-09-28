@@ -9,10 +9,15 @@
         "clock",
     ],
     "modules-right": [
+        "bluetooth",
         "network",
         "pulseaudio",
         "battery",
     ],
+    "bluetooth": {
+        "format": " {device_alias} ",
+        "format-on": ""
+    },
     "network": {
         "format-wifi": " {essid} ",
         "format-ethernet": " {ifname} ",
