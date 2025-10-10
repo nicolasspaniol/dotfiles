@@ -96,7 +96,7 @@ binds {
     XF86MonBrightnessDown { spawn "brightnessctl" "set" "5%-" "-n"; }
     XF86MonBrightnessUp { spawn "brightnessctl" "set" "5%+"; }
 
-    Alt+Shift+Q { close-window; }
+    Alt+Shift+Q repeat=false { close-window; }
 
     Alt+G { focus-column-first; }
     Alt+H { focus-column-left; }
