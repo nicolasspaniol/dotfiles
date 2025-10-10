@@ -214,6 +214,9 @@ overview {
 }
 
 spawn-at-startup "xwayland-satellite"
+spawn-at-startup "waybar"
+spawn-sh-at-startup "swaybg -i ~/wallpaper.png -m fill"
+spawn-at-startup "mako"
 
 environment {
     DISPLAY ":0"
