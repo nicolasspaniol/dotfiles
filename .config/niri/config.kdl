@@ -100,15 +100,15 @@ binds {
 
     Alt+G { focus-column-first; }
     Alt+H { focus-column-left; }
-    Alt+J { focus-window-down; }
-    Alt+K { focus-window-up; }
+    Alt+J { focus-window-or-workspace-down; }
+    Alt+K { focus-window-or-workspace-up; }
     Alt+L { focus-column-right; }
     Alt+Semicolon { focus-column-last; }
 
     Alt+Shift+G { move-column-to-first; }
     Alt+Shift+H { move-column-left; }
-    Alt+Shift+J { move-window-down; }
-    Alt+Shift+K { move-window-up; }
+    Alt+Shift+J { move-window-down-or-to-workspace-down; }
+    Alt+Shift+K { move-window-up-or-to-workspace-up; }
     Alt+Shift+L { move-column-right; }
     Alt+Shift+Semicolon { move-column-to-last; }
 
