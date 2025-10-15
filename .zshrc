@@ -37,6 +37,7 @@ alias hx="helix"
 alias open="xdg-open"
 alias py="$(command -v python || command -v python3)"
 alias poff="poweroff"
+alias poffh="systemctl hibernate"
 alias poffr="reboot"
 alias venv="source .venv/bin/activate" # Because I use too much Python
 alias gs="git status"
