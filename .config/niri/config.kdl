@@ -185,6 +185,11 @@ window-rule { // Wi-fi manager window
     default-column-width { fixed 700; }
 }
 
+window-rule {
+    match is-focused=false
+    opacity 0.75
+}
+
 window-rule { // Firefox PiP
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     open-floating true
