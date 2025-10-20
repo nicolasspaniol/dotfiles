@@ -16,7 +16,8 @@
     ],
     "bluetooth": {
         "format": " {device_alias} ",
-        "format-on": ""
+        "format-on": "",
+        "on-click": "foot --title 'floating' bluetoothctl",
     },
     "network": {
         "format-wifi": " {essid} ",
@@ -24,7 +25,7 @@
         "tooltip-format-wifi": " {ipaddr} / {signalStrength}% ",
         "tooltip-format-ethernet": " {ipaddr} ",
         "format-disconnected": "",
-        "on-click": "foot --title 'floating' nmtui"
+        "on-click": "foot --title 'floating' nmtui",
     },
     "sway/scratchpad": {
         "format": " hid {count} ",
