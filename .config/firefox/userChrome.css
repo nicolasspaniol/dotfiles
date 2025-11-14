@@ -32,6 +32,6 @@ image.tab-icon-overlay[soundplaying] {
   box-shadow: none !important;
   outline: 1px inset var(--tab-selected-outline-color) !important;
   border-top-left-radius: 8px;
-  outline-offset: 1px;
+  outline-offset: 0px;
   overflow: hidden;
 }
