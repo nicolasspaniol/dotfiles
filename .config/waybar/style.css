@@ -22,7 +22,7 @@ window#waybar {
   box-shadow: inset 0 2px white;
 }
 
-#workspaces button.empty:not(.focused) {
+#workspaces button:last-child:not(.focused) {
     /* visibility:hidden; and display:none; are not available */
     color: transparent;
 }
