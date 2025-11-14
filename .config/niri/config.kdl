@@ -144,6 +144,9 @@ binds {
     Alt+Shift+F { fullscreen-window; }
 
     Alt+C { center-window; }
+    Alt+Shift+C { spawn ".local/bin/center.sh"; }
+
+    Alt+Comma { spawn "foot" "--title" "floating" "./.local/bin/change_ws_name.sh"; }
 
     // Column width
     Alt+Minus { set-column-width "-5%"; }
