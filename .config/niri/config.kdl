@@ -1,5 +1,7 @@
 input {
     keyboard {
+        repeat-delay 400
+
         xkb {
             // Change keyboard
             layout "us,us"
