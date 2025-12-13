@@ -146,7 +146,6 @@ binds {
     Alt+Shift+F { fullscreen-window; }
 
     Alt+C { center-window; }
-    Alt+Shift+C { spawn ".local/bin/center.sh"; }
 
     Alt+Comma { spawn "foot" "--title" "floating" "./.local/bin/change_ws_name.sh"; }
 
@@ -232,6 +231,7 @@ spawn-at-startup "xwayland-satellite"
 spawn-at-startup "waybar"
 spawn-sh-at-startup "swaybg -i ~/wallpaper.png -m fill"
 spawn-at-startup "mako"
+spawn-sh-at-startup "~/.local/bin/unset_empty_ws_name.sh"
 
 environment {
     DISPLAY ":0"
