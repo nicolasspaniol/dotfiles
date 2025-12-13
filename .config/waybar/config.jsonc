@@ -17,6 +17,7 @@
     "bluetooth": {
         "format": " {device_alias} ",
         "format-on": "",
+        "tooltip-format": " {device_battery_percentage}% ",
         "on-click": "foot --title 'floating' bluetoothctl",
     },
     "network": {
