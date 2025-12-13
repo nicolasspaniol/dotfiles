@@ -35,6 +35,8 @@
         "format": " [{}] ",
     },
     "pulseaudio": {
+        "reverse-scrolling": true,
+        "scroll-step": 0.5,
         "format": " {volume}% vol ",
     },
     "clock": {
