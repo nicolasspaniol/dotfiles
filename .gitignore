@@ -17,6 +17,8 @@
 !.config/firefox/**
 !.config/niri/
 !.config/niri/**
+!.config/xplr/
+!.config/xplr/**
 
 !lyconfig.ini
 !.zshrc
