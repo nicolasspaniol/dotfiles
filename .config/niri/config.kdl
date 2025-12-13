@@ -43,6 +43,7 @@ layout {
         proportion 0.33333
         proportion 0.5
         proportion 0.66667
+        proportion 1.0
     }
 
     preset-window-heights {
@@ -85,8 +86,6 @@ cursor {
 }
 
 binds {
-    Alt+Y { toggle-windowed-fullscreen; }
-
     Alt+Return repeat=false { spawn "foot"; }
     Alt+Escape repeat=false { spawn "foot" "--title" "floating" "gyr" "--nosway" "-r"; }
     Alt+Space repeat=false { toggle-overview; }
@@ -100,19 +99,15 @@ binds {
 
     Alt+Shift+Q repeat=false { close-window; }
 
-    Alt+G { focus-column-first; }
     Alt+H { focus-column-left; }
     Alt+J { focus-window-or-workspace-down; }
     Alt+K { focus-window-or-workspace-up; }
     Alt+L { focus-column-right; }
-    Alt+Semicolon { focus-column-last; }
 
-    Alt+Shift+G { move-column-to-first; }
     Alt+Shift+H { move-column-left; }
     Alt+Shift+J { move-window-down-or-to-workspace-down; }
     Alt+Shift+K { move-window-up-or-to-workspace-up; }
     Alt+Shift+L { move-column-right; }
-    Alt+Shift+Semicolon { move-column-to-last; }
 
     Alt+1 { focus-workspace 1; }
     Alt+2 { focus-workspace 2; }
@@ -123,6 +118,7 @@ binds {
     Alt+7 { focus-workspace 7; }
     Alt+8 { focus-workspace 8; }
     Alt+9 { focus-workspace 9; }
+    Alt+0 { focus-workspace 10; }
 
     Alt+Shift+1 { move-column-to-workspace 1; }
     Alt+Shift+2 { move-column-to-workspace 2; }
@@ -133,6 +129,7 @@ binds {
     Alt+Shift+7 { move-column-to-workspace 7; }
     Alt+Shift+8 { move-column-to-workspace 8; }
     Alt+Shift+9 { move-column-to-workspace 9; }
+    Alt+Shift+0 { move-column-to-workspace 10; }
 
     Alt+Tab repeat=false { focus-workspace-previous; }
 
@@ -140,10 +137,12 @@ binds {
     // in its way
     Alt+N  { consume-or-expel-window-left; }
     Alt+M { consume-or-expel-window-right; }
+
     Alt+T { toggle-column-tabbed-display; }
 
-    Alt+F { maximize-column; }
+    Alt+F { maximize-window-to-edges; }
     Alt+Shift+F { fullscreen-window; }
+    Alt+Y { toggle-windowed-fullscreen; }
 
     Alt+C { center-window; }
 
