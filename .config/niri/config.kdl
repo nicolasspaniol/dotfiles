@@ -14,7 +14,6 @@ input {
     touchpad {
         tap
         natural-scroll
-        disabled-on-external-mouse
     }
 
     // Navigating into another window moves the cursor to its center
