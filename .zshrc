@@ -40,6 +40,7 @@ alias poff="poweroff"
 alias hpoff="systemctl hibernate"
 alias rpoff="reboot"
 alias venv="source .venv/bin/activate" # Because I use too much Python
+alias ur="uv run"
 alias gs="git status"
 alias xp="xplr"
 # Opens foot in another process without displaying any message
