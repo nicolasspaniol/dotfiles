@@ -4,9 +4,9 @@ input {
 
         xkb {
             // Change keyboard
-            layout "us,us"
-            variant "intl,colemak"
-            options "caps:swapescape,numpad:mac"
+            layout "us,ru"
+            variant "intl,"
+            options "caps:swapescape,numpad:mac,grp:win_space_toggle"
         }
         numlock
     }
