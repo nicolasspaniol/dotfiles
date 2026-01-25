@@ -25,7 +25,6 @@ window#waybar {
     rgba(255, 255, 255, .2) 0%,
     rgba(255, 255, 255, 0) 80%
   );
-  transition: .5s background, .5s box-shadow, .3s color;
 }
 
 #workspaces button.empty {
