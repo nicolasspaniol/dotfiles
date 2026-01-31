@@ -42,6 +42,7 @@ alias rpoff="reboot"
 alias venv="source .venv/bin/activate" # Because I use too much Python
 alias ur="uv run"
 alias gs="git status"
+alias gd="git diff --staged"
 alias xp="xplr"
 # Opens foot in another process without displaying any message
 [[ ! $SSH_CONNECTION ]] && alias cmd="read < <(nohup foot > /dev/null 2>&1 &)"
