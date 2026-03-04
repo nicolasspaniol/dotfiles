@@ -13,11 +13,6 @@ name = "html"
 file-types = ["html", "hbs"]
 
 [[language]]
-name = "markdown"
-file-types = ["md"]
-language-servers = [ "scls" ]
-
-[[language]]
 name = "zig"
 auto-format = false
 
@@ -25,26 +20,6 @@ auto-format = false
 name = "python"
 language-servers = ["pylsp", "ruff", "ty"]
 auto-format = false
-
-[[language]]
-name = "lean"
-language-servers = [ "scls", "lean" ]
-
-# Snippet system using https://github.com/estin/simple-completion-language-server
-[language-server.scls]
-command = "simple-completion-language-server"
-[language-server.scls.config]
-max_completion_items = 20
-snippets_first = true
-feature_words = false
-feature_unicode_input = false
-feature_snippets = true
-feature_paths = false
-snippets_inline_by_word_tail = false
-feature_citations = false
-[language-server.scls.environment]
-RUST_LOG = "info,simple-completion-language-server=info"
-LOG_FILE = "/tmp/completion.log"
 
 [language-server.ruff]
 command = "ruff"
@@ -55,3 +30,7 @@ args = ["server"]
 
 [language-server.pylsp]
 command = "pylsp"
+
+[language-server.lean]
+command = "lake"
+args = ["env", "lean", "--server"]
