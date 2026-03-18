@@ -35,7 +35,6 @@ alias q="exit"
 alias cl="clear"
 alias hx="helix"
 alias open="xdg-open"
-alias py="$(command -v python || command -v python3)" # Don't use this
 alias poff="poweroff"
 alias hpoff="systemctl hibernate"
 alias rpoff="reboot"
