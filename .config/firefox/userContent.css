@@ -1,12 +1,8 @@
 @-moz-document
   url-prefix(about:newtab),
   url-prefix(about:home) {
-    .newtab-main div.body-wrapper {
-      display: none !important;
-    }
-
-    .logo-and-wordmark {
-      box-shadow: 0 0 100px black;
-      background: rgba(0, 0, 0, .29);
+    :root {
+      --in-content-page-background: #00000000 !important;
+      --in-content-box-background: #00000088 !important;
     }
 }

@@ -33,4 +33,12 @@ image.tab-icon-overlay[soundplaying] {
   outline: 1px inset var(--tab-selected-outline-color) !important;
   outline-offset: 0px;
   overflow: hidden;
+  border-radius: 4px 0 0 0;
+}
+
+/* Make the background transparent on new page and toolbox */
+:root {
+  --toolbox-bgcolor-inactive: #00000077 !important;
+  --toolbox-bgcolor: #00000077 !important;
+  --tabpanel-background-color: #00000000 !important;
 }
