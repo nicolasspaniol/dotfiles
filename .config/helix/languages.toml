@@ -18,15 +18,11 @@ auto-format = false
 
 [[language]]
 name = "python"
-language-servers = ["pylsp", "ruff", "ty"]
+language-servers = ["pylsp", "ruff"]
 auto-format = false
 
 [language-server.ruff]
 command = "ruff"
-
-[language-server.ty]
-command = "ty"
-args = ["server"]
 
 [language-server.pylsp]
 command = "pylsp"

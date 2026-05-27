@@ -1,0 +1,4 @@
+inherits = "ayu_evolve"
+"ui.background" = {}
+"comment" = { "fg" = "#777788", modifiers = ["italic"] }
+"ui.virtual.ruler" = { bg = "#222228" }
