@@ -9,10 +9,12 @@ zle -N edit-command-line
 bindkey "^Y" edit-command-line
 
 # Autocomplete
-autoload -Uz compinit
-compinit
+autoload bashcompinit && bashcompinit
+autoload -Uz compinit && compinit
 # Ignore case on autocomplete
 zstyle ":completion:*" matcher-list "m:{A-Za-z}={a-zA-Z}"
+# AWS autocomplete
+complete -C 'aws_completer' aws
 
 # Disables the annoying beep sound
 unsetopt BEEP
