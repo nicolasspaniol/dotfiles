@@ -1,4 +1,4 @@
-echo -n "Workspace name: "
+echo -ne "\n  Workspace name: "
 read NAME
 if [ -z "$NAME" ]; then
   niri msg action unset-workspace-name;

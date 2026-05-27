@@ -51,13 +51,19 @@ layout {
         proportion 1.0
     }
 
+    border {
+        width 1
+        active-color "#ffffff"
+        inactive-color "#666666"
+    }
+
     focus-ring {
-        width 2
-        active-color "#eee"
+        off
     }
 
     struts {
-        top -12
+        top -10
+        bottom -10
         left 12
         right 12
     }
@@ -184,6 +190,12 @@ screenshot-path "~/Pictures/Screenshots/Screenshot-%Y%m%d-%H%M%S.png"
 // Asks new windows to disable its client-side decorations
 prefer-no-csd
 
+window-rule { // All windows
+    geometry-corner-radius 4
+    clip-to-geometry true
+    draw-border-with-background false
+}
+
 window-rule { // For pop-up like windows
     match app-id="foot" title="floating"
     open-floating true
@@ -191,20 +203,17 @@ window-rule { // For pop-up like windows
     default-column-width { fixed 700; }
 }
 
-window-rule {
-    match is-focused=false
-    opacity 0.75
-}
+// window-rule { // Firefox PiP
+//    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+//    open-floating true
+//}
 
-window-rule { // Firefox PiP
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
-    open-floating true
-}
-
-window-rule { // All windows
-    geometry-corner-radius 4
-    clip-to-geometry true
-}
+//window-rule {
+//    match app-id=r#"firefox$"#
+//    background-effect {
+//        blur true
+//    }
+//}
 
 // Make swaybg and waybar both stay in place when I change workspaces
 layer-rule {
