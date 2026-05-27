@@ -90,8 +90,8 @@ cursor {
 }
 
 binds {
-    Alt+Return repeat=false { spawn "foot"; }
-    Alt+Escape repeat=false { spawn "foot" "--title" "floating" "gyr" "--nosway" "-r"; }
+    Alt+Return repeat=false { spawn "footclient"; }
+    Alt+Escape repeat=false { spawn "footclient" "--title" "floating" "gyr" "--nosway" "-r"; }
     Alt+Space repeat=false { toggle-overview; }
 
     XF86AudioRaiseVolume { spawn "pactl" "set-sink-volume" "@DEFAULT_SINK@" "+5%"; }
@@ -150,7 +150,7 @@ binds {
 
     Alt+C { center-window; }
 
-    Alt+Comma { spawn "foot" "--title" "floating" "./.local/bin/change_ws_name.sh"; }
+    Alt+Comma { spawn "footclient" "--title" "floating" "./.local/bin/change_ws_name.sh"; }
 
     // Column width
     Alt+Minus { set-column-width "-5%"; }
@@ -237,7 +237,8 @@ spawn-at-startup "xwayland-satellite"
 spawn-at-startup "waybar"
 spawn-sh-at-startup "swaybg -i ~/wallpaper.png -m fill"
 spawn-at-startup "mako"
-spawn-sh-at-startup "~/.local/bin/unset_empty_ws_name.sh"
+spawn-at-startup "~/.local/bin/unset_empty_ws_name.sh"
+spawn-sh-at-startup "foot --server"
 
 environment {
     DISPLAY ":0"

@@ -28,6 +28,21 @@ local orange="#d6691c"
 local blue="#0c7ff2"
 export PROMPT="%(!.%K{$orange} #.%K{$blue}) $sship%1~%f %k%(!.%F{$orange}.%F{$blue})🭬%f "
 
+# Makes ctrl+shift+n open a new foot client *in the CWD*
+# https://codeberg.org/dnkl/foot/wiki#user-content-spawning-new-terminal-instances-in-the-current-working-directory
+function osc7-pwd() {
+    emulate -L zsh # also sets localoptions for us
+    setopt extendedglob
+    local LC_ALL=C
+    printf '\e]7;file://%s%s\e\' $HOST ${PWD//(#m)([^@-Za-z&-;_~])/%${(l:2::0:)$(([##16]#MATCH))}}
+}
+
+function chpwd-osc7-pwd() {
+    (( ZSH_SUBSHELL )) || osc7-pwd
+}
+autoload -Uz add-zsh-hook
+add-zsh-hook -Uz chpwd chpwd-osc7-pwd
+
 # Aliases and functions -------------------------------------------------------
 
 # Shortcuts
@@ -44,8 +59,6 @@ alias ur="uv run"
 alias gs="git status"
 alias gd="git diff --staged"
 alias xp="xplr"
-# Opens foot in another process without displaying any message
-[[ ! $SSH_CONNECTION ]] && alias cmd="read < <(nohup foot > /dev/null 2>&1 &)"
 
 # Default options
 alias ls="ls --color=auto -A -v --group-directories-first"
