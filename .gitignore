@@ -26,7 +26,7 @@
 # so that its contents don't show up on helix file picker
 .config/helix/runtime/**
 
-!lyconfig.ini
+!ly_config.ini
 !.zshrc
 !.zprofile
 !.gitconfig
