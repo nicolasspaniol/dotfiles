@@ -23,7 +23,7 @@ image.tab-icon-overlay[soundplaying] {
   padding-right: 11px !important;
 }
 
-/* Cause I have a keyboard */
+/* Because I have a keyboard */
 #back-button, #forward-button {
   display: none !important;
 }

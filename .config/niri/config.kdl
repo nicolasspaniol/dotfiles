@@ -93,6 +93,7 @@ binds {
     Alt+Return repeat=false { spawn "footclient"; }
     Alt+Escape repeat=false { spawn "footclient" "--title" "floating" "gyr" "--nosway" "-r"; }
     Alt+Space repeat=false { toggle-overview; }
+    Alt+Backspace repeat=false { spawn "swaylock" "--image" "wallpaper.png" "--scaling" "fill"; }
 
     XF86AudioRaiseVolume { spawn "pactl" "set-sink-volume" "@DEFAULT_SINK@" "+5%"; }
     XF86AudioLowerVolume { spawn "pactl" "set-sink-volume" "@DEFAULT_SINK@" "-5%"; }
@@ -234,13 +235,10 @@ overview {
 }
 
 spawn-at-startup "xwayland-satellite"
-spawn-at-startup "waybar"
 spawn-sh-at-startup "swaybg -i ~/wallpaper.png -m fill"
 spawn-at-startup "mako"
 spawn-at-startup "~/.local/bin/unset_empty_ws_name.sh"
 spawn-sh-at-startup "foot --server"
 
-environment {
-    DISPLAY ":0"
-    MOZ_ENABLE_WAYLAND "1"
-}
+// Fixes some issues with Firefox dialogs. There may be a better solution
+spawn-sh-at-startup "dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY XAUTHORITY"

@@ -21,7 +21,7 @@ unsetopt BEEP
 
 # Necessary over SSH
 # https://stackoverflow.com/a/57805911/12712114
-export TERM=xterm
+[[ $SSH_CONNECTION ]] && export TERM=xterm
 
 [[ $SSH_CONNECTION ]] && local sship="$(echo $SSH_CONNECTION | cut -d ' ' -f3):"
 local orange="#d6691c"
@@ -69,11 +69,23 @@ alias less="less -R"
 alias sudo="sudo -E "
 alias fd="fd -I "
 alias rg="rg -p --no-ignore"
+alias wlsunset="wlsunset -l -22.9 -L -43.2"
 
 # https://www.stefanjudis.com/snippets/a-native-shell-alternative-to-the-trash-cli/
 trash() { mv "$@" "$HOME/.local/share/Trash" }
 trashcl() { rm -fr "$HOME"/.local/share/Trash/* }
 trashls() { ls "$HOME/.local/share/Trash" }
+
+# https://stackoverflow.com/a/58598185
+cap () { tee /tmp/capture.out; }
+ret () { cat /tmp/capture.out; }
+
+copy-file() { wl-copy -t text/uri-list "file://$(realpath $1)" }
+copy-as-file() {
+  local file=/tmp/clipboard-$RANDOM
+  cat > "$file"
+  copy-file "$file"
+}
 
 # Keyboard bindings -----------------------------------------------------------
 
@@ -81,8 +93,11 @@ trashls() { ls "$HOME/.local/share/Trash" }
 bindkey -r "^[[A"
 bindkey -r "^[[B"
 
-bindkey "^F" forward-word
 bindkey "^B" backward-word
+bindkey "^F" forward-word
+
+bindkey "^H" backward-char
+bindkey "^L" forward-char
 
 # History ---------------------------------------------------------------------
 
