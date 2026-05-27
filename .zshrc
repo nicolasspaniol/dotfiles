@@ -2,7 +2,7 @@
 
 export PATH="$HOME/.cargo/bin:$HOME/.elan/bin:$HOME/.local/bin:$PATH"
 
-export EDITOR=helix
+export EDITOR=kak
 
 autoload -Uz edit-command-line
 zle -N edit-command-line
@@ -33,7 +33,6 @@ alias su="sudo -E zsh"
 alias sp="sudo pacman"
 alias q="exit"
 alias cl="clear"
-alias hx="helix"
 alias open="xdg-open"
 alias poff="poweroff"
 alias hpoff="systemctl hibernate"

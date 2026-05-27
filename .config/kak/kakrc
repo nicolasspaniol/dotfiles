@@ -1,0 +1,58 @@
+source "%val{config}/plugins/plug.kak/rc/plug.kak"
+
+plug "andreyorst/plug.kak" noload
+plug "ul/kak-lsp" do %{
+    cargo build --release --locked
+    cargo install --force --path .
+}
+plug "kmafeni04/match.kak"
+plug "andreyorst/smarttab.kak" defer smarttab %{
+    set-option global softtabstop 4
+}
+
+colorscheme ayu-dark
+
+lsp-enable
+
+# match.kak recommended config
+declare-user-mode match
+map global normal m ':enter-user-mode match<ret>'
+map global match m m -docstring 'Match next matching pair'
+map global match i ':match-inside<ret>' -docstring 'Match inside object'
+map global match a ':match-around<ret>' -docstring 'Match around object'
+map global match n ':match-next<ret>' -docstring 'Match next object'
+map global match p ':match-prev<ret>' -docstring 'Match previous object'
+map global match s ':match-surround-add<ret>' -docstring 'Surround selection with character'
+map global match d ':match-surround-delete<ret>' -docstring "Delete selection's surrounding character"
+map global match r ':match-surround-replace<ret>' -docstring "Replace selection's surrounding character"
+
+map global normal <c-/> ':comment-line<ret>'
+
+add-highlighter global/ show-matching
+
+# Always leave 5 lines visible above and below the cursor
+set-option global scrolloff 5,5
+
+set-option global tabstop 4            # Tab character will be displayed as 4 spaces
+set-option global indentwidth 4        # < and > will indent the code by 4 spaces
+hook global BufOpenFile .* expandtab   # Use spaces instead of tabs in all buffers
+hook global BufNewFile  .* expandtab
+
+def yank-to-wlclipboard %{
+    exec %sh{
+        printf %s "$kak_selection" | wl-copy > /dev/null 2>&1 &
+    }
+}
+
+map global user k ':lsp-hover<ret>'           -docstring 'Show hover information'
+map global user l ':niri-new-window<ret>'     -docstring 'Open new window to the right'
+map global user j ':niri-new-consume<ret>'    -docstring 'Split window vertically'
+map global user y ':yank-to-wlclipboard<ret>' -docstring 'Copy selection to wl-clipboard'
+map global user r ':lsp-rename-prompt<ret>'   -docstring 'Rename hovered symbol'
+map global user p '|wl-paste<ret>'            -docstring 'Paste selection from wl-clipboard'
+
+map global goto d ':lsp-definition<ret>'      -docstring 'Go to definition (LSP)'
+
+# Deletes/replaces without yanking
+map global normal d <a-d>
+map global normal c <a-c>
