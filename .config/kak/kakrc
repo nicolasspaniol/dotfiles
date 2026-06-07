@@ -1,5 +1,7 @@
 source "%val{config}/plugins/plug.kak/rc/plug.kak"
 
+require-module connect
+
 plug "andreyorst/plug.kak" noload
 plug "ul/kak-lsp" do %{
     cargo build --release --locked
