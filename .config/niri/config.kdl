@@ -203,17 +203,17 @@ window-rule { // For pop-up like windows
     default-column-width { fixed 700; }
 }
 
-// window-rule { // Firefox PiP
-//    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
-//    open-floating true
-//}
+window-rule { // Firefox PiP
+   match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+   open-floating true
+}
 
-//window-rule {
-//    match app-id=r#"firefox$"#
-//    background-effect {
-//        blur true
-//    }
-//}
+window-rule { // Firefox
+   match app-id=r#"firefox$"#
+   background-effect {
+       blur true
+   }
+}
 
 // Make swaybg and waybar both stay in place when I change workspaces
 layer-rule {
