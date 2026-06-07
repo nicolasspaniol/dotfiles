@@ -4,7 +4,7 @@ export PATH="$HOME/.cargo/bin:$HOME/.elan/bin:$HOME/.local/bin:$PATH"
 
 export EDITOR=kak
 
-# Better vi mode
+# Better vi mode (https://github.com/jeffreytse/zsh-vi-mode)
 source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 # Autocomplete
