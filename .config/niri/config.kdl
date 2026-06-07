@@ -95,24 +95,30 @@ binds {
     Alt+Space repeat=false { toggle-overview; }
     Alt+Backspace repeat=false { spawn "swaylock" "--image" "wallpaper.png" "--scaling" "fill"; }
 
-    XF86AudioRaiseVolume { spawn "pactl" "set-sink-volume" "@DEFAULT_SINK@" "+5%"; }
-    XF86AudioLowerVolume { spawn "pactl" "set-sink-volume" "@DEFAULT_SINK@" "-5%"; }
-    XF86AudioMute        { spawn "pactl" "set-sink-mute" "@DEFAULT_SINK@" "toggle"; }
-
-    XF86MonBrightnessDown { spawn "brightnessctl" "set" "5%-" "-n"; }
-    XF86MonBrightnessUp { spawn "brightnessctl" "set" "5%+"; }
-
     Alt+Shift+Q repeat=false { close-window; }
 
+    // View movement
     Alt+H { focus-column-left; }
     Alt+J { focus-window-or-workspace-down; }
     Alt+K { focus-window-or-workspace-up; }
     Alt+L { focus-column-right; }
 
+    Alt+Tab repeat=false { focus-workspace-previous; }
+
+    // Window/column movement
     Alt+Shift+H { move-column-left; }
     Alt+Shift+J { move-window-down-or-to-workspace-down; }
     Alt+Shift+K { move-window-up-or-to-workspace-up; }
     Alt+Shift+L { move-column-right; }
+
+    Alt+N  { consume-or-expel-window-left; } // Moves a window left or right, but allows
+    Alt+M { consume-or-expel-window-right; } // it to be consumed into columns in its way
+
+    // Workspace movement
+    Alt+Ctrl+H { move-workspace-to-monitor-previous; }
+    Alt+Ctrl+J { move-workspace-down; }
+    Alt+Ctrl+K { move-workspace-up; }
+    Alt+Ctrl+L { move-workspace-to-monitor-next; }
 
     Alt+1 { focus-workspace 1; }
     Alt+2 { focus-workspace 2; }
@@ -135,13 +141,6 @@ binds {
     Alt+Shift+8 { move-column-to-workspace 8; }
     Alt+Shift+9 { move-column-to-workspace 9; }
     Alt+Shift+0 { move-column-to-workspace 10; }
-
-    Alt+Tab repeat=false { focus-workspace-previous; }
-
-    // Moves a window left or right, but allows it to be consumed into columns
-    // in its way
-    Alt+N  { consume-or-expel-window-left; }
-    Alt+M { consume-or-expel-window-right; }
 
     Alt+T { toggle-column-tabbed-display; }
 
