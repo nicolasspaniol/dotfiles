@@ -4,6 +4,9 @@ export PATH="$HOME/.cargo/bin:$HOME/.elan/bin:$HOME/.local/bin:$PATH"
 
 export EDITOR=kak
 
+set -o vi
+
+# Open $EDITOR for editing the current command on ctrl+Y
 autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey "^Y" edit-command-line
@@ -86,18 +89,6 @@ copy-as-file() {
   cat > "$file"
   copy-file "$file"
 }
-
-# Keyboard bindings -----------------------------------------------------------
-
-# Unbind up/down keys to get me used to navigating the history with Ctrl+P / N
-bindkey -r "^[[A"
-bindkey -r "^[[B"
-
-bindkey "^B" backward-word
-bindkey "^F" forward-word
-
-bindkey "^H" backward-char
-bindkey "^L" forward-char
 
 # History ---------------------------------------------------------------------
 
