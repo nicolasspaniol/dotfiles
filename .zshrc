@@ -4,12 +4,8 @@ export PATH="$HOME/.cargo/bin:$HOME/.elan/bin:$HOME/.local/bin:$PATH"
 
 export EDITOR=kak
 
-set -o vi
-
-# Open $EDITOR for editing the current command on ctrl+Y
-autoload -Uz edit-command-line
-zle -N edit-command-line
-bindkey "^Y" edit-command-line
+# Better vi mode
+source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 # Autocomplete
 autoload bashcompinit && bashcompinit
