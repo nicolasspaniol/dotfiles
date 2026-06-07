@@ -46,15 +46,20 @@ def yank-to-wlclipboard %{
     }
 }
 
-map global user k ':lsp-hover<ret>'           -docstring 'Show hover information'
-map global user l ':niri-new-window<ret>'     -docstring 'Open new window to the right'
-map global user j ':niri-new-consume<ret>'    -docstring 'Split window vertically'
-map global user y ':yank-to-wlclipboard<ret>' -docstring 'Copy selection to wl-clipboard'
-map global user r ':lsp-rename-prompt<ret>'   -docstring 'Rename hovered symbol'
-map global user p '|wl-paste<ret>'            -docstring 'Paste selection from wl-clipboard'
+map global user k ':lsp-hover<ret>'            -docstring 'show hover information'
+map global user y ':yank-to-wlclipboard<ret>'  -docstring 'copy selection to wl-clipboard'
+map global user r ':lsp-rename-prompt<ret>'    -docstring 'rename hovered symbol'
+map global user p '|wl-paste<ret>'             -docstring 'paste selection from wl-clipboard'
 
-map global goto d ':lsp-definition<ret>'      -docstring 'Go to definition (LSP)'
+# not working under footclient:
+# map global user l ':niri-new-window<ret>'     -docstring 'open new window to the right'
+# map global user j ':niri-new-consume<ret>'    -docstring 'split window vertically'
+
+map global goto p '<esc>:buffer-previous<ret>' -docstring 'previous buffer'
+map global goto n '<esc>:buffer-next<ret>'     -docstring 'next buffer'
 
 # Deletes/replaces without yanking
 map global normal d <a-d>
 map global normal c <a-c>
+
+map global user p '|wl-paste<ret>'             -docstring 'paste selection from wl-clipboard'
