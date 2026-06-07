@@ -5,8 +5,8 @@ xplr.config.general.read_only = true
 xplr.config.general.table.header.cols = {
   { format = "", style = {} },
   { format = "╷", style = {} },
-  { format = "size", style = {} },
-  { format = "modified", style = {} },
+  { format = "   size   ", style = {} },
+  { format = " modified ", style = {} },
 }
 
 xplr.config.general.table.row.cols = {
@@ -37,20 +37,15 @@ xplr.config.general.table.tree = {
 xplr.config.general.table.col_widths = {
   { Length = 7 },
   { Percentage = 50 },
-  { Percentage = 10 },
-  { Length = 16 },
+  { Length = 10 },
+  { Length = 10 },
 }
 
 xplr.config.general.focus_ui.prefix = ">["
 
 xplr.config.general.focus_ui.suffix = "]"
 
-xplr.config.general.panel_ui.default.borders = {
-  "Top",
-  "Right",
-  "Bottom",
-  "Left",
-}
+xplr.config.general.panel_ui.default.borders = {}
 
 xplr.config.general.panel_ui.default.border_type = "Plain"
 
@@ -81,6 +76,21 @@ xplr.fn.builtin.fmt_general_table_row_cols_0 = function(m)
 end
 
 -- Renders the datetime column
+-- Currently shows passed time like "5m" or "10d"
 xplr.fn.builtin.fmt_general_table_row_cols_4 = function(m)
-  return tostring(os.date("%d-%m-%Y %H:%M", m.last_modified / 1000000000))
+  local diff = os.time() - math.floor(m.last_modified / 1000000000)
+
+  if diff < 60 then
+    return diff .. " s"
+  elseif diff < 3600 then
+    return math.floor(diff / 60) .. " m"
+  elseif diff < 86400 then
+    return math.floor(diff / 3600) .. " h"
+  elseif diff < 2592000 then
+    return math.floor(diff / 86400) .. " d"
+  elseif diff < 31536000 then
+    return math.floor(diff / 2592000) .. " mo"
+  else
+    return math.floor(diff / 31536000) .. " y"
+  end
 end
