@@ -63,3 +63,7 @@ map global normal d <a-d>
 map global normal c <a-c>
 
 map global user p '|wl-paste<ret>'             -docstring 'paste selection from wl-clipboard'
+
+# Extend selection up (inverse of shift+c)
+# Default is alt+c, but I can't use that
+map global normal D '<a-C>'
