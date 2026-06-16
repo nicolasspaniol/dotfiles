@@ -171,6 +171,8 @@ binds {
     Alt+F10       repeat=false { spawn ".local/bin/screenshot.sh"; }
     Alt+Shift+F10 repeat=false { spawn ".local/bin/screenshot_all.sh"; }
 
+    XF86AudioMute           { spawn "pactl" "set-sink-mute" "@DEFAULT_SINK@" "toggle"; }
+
     Alt+TouchpadScrollDown  { spawn "pactl" "set-sink-volume" "@DEFAULT_SINK@" "+1%"; }
     Alt+TouchpadScrollUp    { spawn "pactl" "set-sink-volume" "@DEFAULT_SINK@" "-1%"; }
     Alt+TouchpadScrollLeft  { spawn "brightnessctl" "set" "+1%"; }
