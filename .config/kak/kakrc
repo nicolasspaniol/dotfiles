@@ -67,3 +67,13 @@ map global user p '|wl-paste<ret>'             -docstring 'paste selection from 
 # Extend selection up (inverse of shift+c)
 # Default is alt+c, but I can't use that
 map global normal D '<a-C>'
+
+define-command dba -docstring "delete all buffers" %{
+  evaluate-commands %sh{
+    for b in $kak_buflist; do
+      printf 'delete-buffer %s\n' "$b"
+    done
+  }
+}
+
+map global normal <esc> '<esc>:jumpJump<ret>'
