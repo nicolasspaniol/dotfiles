@@ -35,9 +35,3 @@ image.tab-icon-overlay[soundplaying] {
   overflow: hidden;
   border-radius: 4px 0 0 0;
 }
-
-/* Make the background transparent on new page and toolbox */
-:root {
-  --toolbox-bgcolor-inactive: #00000077 !important;
-  --toolbox-bgcolor: #00000077 !important;
-}
