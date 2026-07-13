@@ -22,10 +22,19 @@ unsetopt BEEP
 # https://stackoverflow.com/a/57805911/12712114
 [[ $SSH_CONNECTION ]] && export TERM=xterm
 
-[[ $SSH_CONNECTION ]] && local sship="$(echo $SSH_CONNECTION | cut -d ' ' -f3):"
-local orange="#d6691c"
-local blue="#0c7ff2"
-export PROMPT="%(!.%K{$orange} #.%K{$blue}) $sship%1~%f %k%(!.%F{$orange}.%F{$blue})🭬%f "
+# quick prompt reference:
+#
+# %n            - username
+# %~            - current directory ("~/Documents/example")
+# %1~           - last component of the above ("example")
+# %F{#123456}   - set foreground to hex color (use %K{...} for background)
+# %f            - reset foreground (use %k for background)
+# %(!.a.b)      - if user == root then "a" else "b"
+
+[[ $SSH_CONNECTION ]] && local sship="@$(echo $SSH_CONNECTION | cut -d ' ' -f3)"
+local orange="#f58720"
+local blue="#0f9bff"
+export PROMPT="%(!.%F{$orange}.%F{$blue}) %n$sship:%1~ %f%(!.#.$) "
 
 # Makes ctrl+shift+n open a new foot client *in the CWD*
 # https://codeberg.org/dnkl/foot/wiki#user-content-spawning-new-terminal-instances-in-the-current-working-directory
@@ -111,4 +120,5 @@ setopt HIST_REDUCE_BLANKS    # Remove superfluous blanks from each command line 
 
 # Others ---------------------------------------------------------------------
 
+# https://github.com/rupa/z
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
