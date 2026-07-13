@@ -1,7 +1,5 @@
 source "%val{config}/plugins/plug.kak/rc/plug.kak"
 
-require-module connect
-
 plug "andreyorst/plug.kak" noload
 plug "ul/kak-lsp" do %{
     cargo build --release --locked
@@ -46,14 +44,13 @@ def yank-to-wlclipboard %{
     }
 }
 
-map global user k ':lsp-hover<ret>'            -docstring 'show hover information'
-map global user y ':yank-to-wlclipboard<ret>'  -docstring 'copy selection to wl-clipboard'
-map global user r ':lsp-rename-prompt<ret>'    -docstring 'rename hovered symbol'
-map global user p '|wl-paste<ret>'             -docstring 'paste selection from wl-clipboard'
+map global user k ':lsp-hover<ret>'           -docstring 'show hover information'
+map global user y ':yank-to-wlclipboard<ret>' -docstring 'copy selection to wl-clipboard'
+map global user r ':lsp-rename-prompt<ret>'   -docstring 'rename hovered symbol'
+map global user p '|wl-paste<ret>'            -docstring 'paste selection from wl-clipboard'
 
-# not working under footclient:
-# map global user l ':niri-new-window<ret>'     -docstring 'open new window to the right'
-# map global user j ':niri-new-consume<ret>'    -docstring 'split window vertically'
+map global user l ':niri-new-window<ret>'  -docstring 'open new window to the right'
+map global user j ':niri-new-consume<ret>' -docstring 'split window vertically'
 
 map global goto p '<esc>:buffer-previous<ret>' -docstring 'previous buffer'
 map global goto n '<esc>:buffer-next<ret>'     -docstring 'next buffer'
