@@ -93,7 +93,7 @@ binds {
     Alt+Return repeat=false { spawn "footclient"; }
     Alt+Escape repeat=false { spawn "footclient" "--title" "floating" "gyr" "--nosway" "-r"; }
     Alt+Space repeat=false { toggle-overview; }
-    Alt+Backspace repeat=false { spawn "swaylock" "--image" "wallpaper.png" "--scaling" "fill"; }
+    Alt+Backspace repeat=false { spawn "swaylock" "--image" "wallpaper.jpg" "--scaling" "fill"; }
 
     Alt+Shift+Q repeat=false { close-window; }
 
@@ -236,7 +236,7 @@ overview {
 }
 
 spawn-at-startup "xwayland-satellite"
-spawn-sh-at-startup "swaybg -i ~/wallpaper.png -m fill"
+spawn-sh-at-startup "swaybg -i ~/wallpaper.jpg -m fill"
 spawn-at-startup "mako"
 spawn-at-startup "~/.local/bin/unset_empty_ws_name.sh"
 spawn-sh-at-startup "foot --server"
