@@ -70,6 +70,7 @@ alias ur="uv run"
 alias gs="git status"
 alias gd="git diff --staged"
 alias xp="xplr"
+alias t="tree"
 
 # Default options
 alias ls="ls --color=auto -A -v --group-directories-first"
@@ -120,8 +121,3 @@ setopt HIST_VERIFY           # Do not execute immediately upon history expansion
 setopt APPEND_HISTORY        # append to history file (Default)
 setopt HIST_NO_STORE         # Don't store history commands
 setopt HIST_REDUCE_BLANKS    # Remove superfluous blanks from each command line being added to the history.
-
-# Others ---------------------------------------------------------------------
-
-# https://github.com/rupa/z
-[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
