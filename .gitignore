@@ -5,6 +5,8 @@
 !.gitignore
 
 !.config/
+!.config/systemd/
+!.config/systemd/**
 !.config/helix/
 !.config/helix/**
 !.config/sway/
