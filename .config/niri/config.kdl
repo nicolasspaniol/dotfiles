@@ -235,11 +235,8 @@ overview {
     }
 }
 
-spawn-at-startup "xwayland-satellite"
 spawn-sh-at-startup "swaybg -i ~/wallpaper.jpg -m fill"
-spawn-at-startup "mako"
 spawn-at-startup "~/.local/bin/unset_empty_ws_name.sh"
-spawn-sh-at-startup "foot --server"
 
 // Fixes some issues with Firefox dialogs. There may be a better solution
 spawn-sh-at-startup "dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY XAUTHORITY"
