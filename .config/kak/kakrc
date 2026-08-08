@@ -9,6 +9,10 @@ plug "kmafeni04/match.kak"
 plug "andreyorst/smarttab.kak" defer smarttab %{
     set-option global softtabstop 4
 }
+plug "andreyorst/fzf.kak" config %{} defer fzf-file %{
+    set-option global fzf_file_command 'fd'
+}
+plug "postsolar/jump.kak"
 
 colorscheme ayu-dark
 
@@ -45,12 +49,17 @@ def yank-to-wlclipboard %{
 }
 
 map global user k ':lsp-hover<ret>'           -docstring 'show hover information'
+# custom function above
 map global user y ':yank-to-wlclipboard<ret>' -docstring 'copy selection to wl-clipboard'
+# kaklsp
 map global user r ':lsp-rename-prompt<ret>'   -docstring 'rename hovered symbol'
 map global user p '|wl-paste<ret>'            -docstring 'paste selection from wl-clipboard'
 
-map global user l ':niri-new-window<ret>'  -docstring 'open new window to the right'
-map global user j ':niri-new-consume<ret>' -docstring 'split window vertically'
+map global user e ':fzf-mode<ret>f'
+
+map global user d ':git show-diff<ret>'       -docstring 'show/update git diff'
+map global user l ':niri-new-window<ret>'     -docstring 'open new window to the right'
+map global user j ':niri-new-consume<ret>'    -docstring 'split window vertically'
 
 map global goto p '<esc>:buffer-previous<ret>' -docstring 'previous buffer'
 map global goto n '<esc>:buffer-next<ret>'     -docstring 'next buffer'
@@ -74,3 +83,5 @@ define-command dba -docstring "delete all buffers" %{
 }
 
 map global normal <esc> '<esc>:jumpJump<ret>'
+
+set-option global ui_options terminal_assistant=off
