@@ -1,34 +1,40 @@
 source "%val{config}/plugins/plug.kak/rc/plug.kak"
 
+
+# Plugins ----------------------------------------------------
+
 plug "andreyorst/plug.kak" noload
 plug "ul/kak-lsp" do %{
     cargo build --release --locked
     cargo install --force --path .
+} config %{
+    lsp-enable
 }
-plug "kmafeni04/match.kak"
 plug "andreyorst/smarttab.kak" defer smarttab %{
     set-option global softtabstop 4
 }
-plug "andreyorst/fzf.kak" config %{} defer fzf-file %{
+plug "andreyorst/fzf.kak" defer fzf-file %{
     set-option global fzf_file_command 'fd'
 }
 plug "postsolar/jump.kak"
+plug "gustavo-hms/luar" config %{
+    require-module luar
+}
+plug "anhsirk0/kakoune-themes" theme config %{
+    colorscheme ayu-dark
+}
 
-colorscheme ayu-dark
+# Load local plugins
+evaluate-commands %sh{
+    for f in "$kak_config"/scripts/*.kak; do
+        echo "source ${f}"
+    done
+}
 
-lsp-enable
 
-# match.kak recommended config
-declare-user-mode match
-map global normal m ':enter-user-mode match<ret>'
-map global match m m -docstring 'Match next matching pair'
-map global match i ':match-inside<ret>' -docstring 'Match inside object'
-map global match a ':match-around<ret>' -docstring 'Match around object'
-map global match n ':match-next<ret>' -docstring 'Match next object'
-map global match p ':match-prev<ret>' -docstring 'Match previous object'
-map global match s ':match-surround-add<ret>' -docstring 'Surround selection with character'
-map global match d ':match-surround-delete<ret>' -docstring "Delete selection's surrounding character"
-map global match r ':match-surround-replace<ret>' -docstring "Replace selection's surrounding character"
+# Visuals --------------------------------------------------------------
+
+set-option global ui_options terminal_assistant=off
 
 map global normal <c-/> ':comment-line<ret>'
 
@@ -37,20 +43,31 @@ add-highlighter global/ show-matching
 # Always leave 5 lines visible above and below the cursor
 set-option global scrolloff 5,5
 
-set-option global tabstop 4            # Tab character will be displayed as 4 spaces
-set-option global indentwidth 4        # < and > will indent the code by 4 spaces
-hook global BufOpenFile .* expandtab   # Use spaces instead of tabs in all buffers
-hook global BufNewFile  .* expandtab
 
-def yank-to-wlclipboard %{
+# Custom commands -----------------------------------------------------
+
+define-command dba -docstring "delete all buffers" %{
+  evaluate-commands %sh{
+    for b in $kak_buflist; do
+      printf 'delete-buffer %s\n' "$b"
+    done
+  }
+}
+
+def pipe-to-wlclipboard %{
     exec %sh{
         printf %s "$kak_selection" | wl-copy > /dev/null 2>&1 &
     }
 }
 
+
+# Keybinds ------------------------------------------------------------
+
+map global normal <c-/> ':comment-line<ret>'
+
 map global user k ':lsp-hover<ret>'           -docstring 'show hover information'
 # custom function above
-map global user y ':yank-to-wlclipboard<ret>' -docstring 'copy selection to wl-clipboard'
+map global user y ':pipe-to-wlclipboard<ret>' -docstring 'copy selection to wl-clipboard'
 # kaklsp
 map global user r ':lsp-rename-prompt<ret>'   -docstring 'rename hovered symbol'
 map global user p '|wl-paste<ret>'            -docstring 'paste selection from wl-clipboard'
@@ -74,14 +91,12 @@ map global user p '|wl-paste<ret>'             -docstring 'paste selection from 
 # Default is alt+c, but I can't use that
 map global normal D '<a-C>'
 
-define-command dba -docstring "delete all buffers" %{
-  evaluate-commands %sh{
-    for b in $kak_buflist; do
-      printf 'delete-buffer %s\n' "$b"
-    done
-  }
-}
-
 map global normal <esc> '<esc>:jumpJump<ret>'
 
-set-option global ui_options terminal_assistant=off
+# Other ----------------------------------------------------------------
+
+set-option global tabstop 4            # Tab character will be displayed as 4 spaces
+set-option global indentwidth 4        # < and > will indent the code by 4 spaces
+hook global BufOpenFile .* expandtab   # Use spaces instead of tabs in all buffers
+hook global BufNewFile  .* expandtab
+
