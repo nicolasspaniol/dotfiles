@@ -91,7 +91,7 @@ cursor {
 
 binds {
     Alt+Return repeat=false { spawn "footclient"; }
-    Alt+Escape repeat=false { spawn "footclient" "--title" "floating" "gyr" "--nosway" "-r"; }
+    Alt+Escape repeat=false { spawn "footclient" "--title" "floating" "uv" "run" ".local/bin/fzlauncher/fzlauncher"; }
     Alt+Space repeat=false { toggle-overview; }
     Alt+Backspace repeat=false { spawn "swaylock" "--image" "wallpaper.jpg" "--scaling" "fill"; }
 
