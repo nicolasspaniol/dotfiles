@@ -65,12 +65,15 @@ def pipe-to-wlclipboard %{
 
 map global normal <c-/> ':comment-line<ret>'
 
-map global user k ':lsp-hover<ret>'           -docstring 'show hover information'
+map global user h ':lsp-hover<ret>'           -docstring 'show hover information'
+
 # custom function above
 map global user y ':pipe-to-wlclipboard<ret>' -docstring 'copy selection to wl-clipboard'
-# kaklsp
-map global user r ':lsp-rename-prompt<ret>'   -docstring 'rename hovered symbol'
 map global user p '|wl-paste<ret>'            -docstring 'paste selection from wl-clipboard'
+
+# kaklsp
+map global user s ':enter-user-mode lsp<ret>'
+map global user r ':lsp-rename-prompt<ret>'   -docstring 'rename hovered symbol'
 
 map global user e ':fzf-mode<ret>f'
 
@@ -92,6 +95,12 @@ map global user p '|wl-paste<ret>'             -docstring 'paste selection from 
 map global normal D '<a-C>'
 
 map global normal <esc> '<esc>:jumpJump<ret>'
+
+map global normal N '<a-n>'
+
+# Makes search case insensitive by default (with caveats: see https://github.com/mawww/kakoune/issues/1272)
+map global normal '/' '/(?i)'
+
 
 # Other ----------------------------------------------------------------
 
