@@ -76,6 +76,7 @@ map global user s ':enter-user-mode lsp<ret>'
 map global user r ':lsp-rename-prompt<ret>'   -docstring 'rename hovered symbol'
 
 map global user e ':fzf-mode<ret>f'
+map global user b ':fzf-mode<ret>b'
 
 map global user d ':git show-diff<ret>'       -docstring 'show/update git diff'
 map global user l ':niri-new-window<ret>'     -docstring 'open new window to the right'
