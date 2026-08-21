@@ -110,3 +110,31 @@ set-option global indentwidth 4        # < and > will indent the code by 4 space
 hook global BufOpenFile .* expandtab   # Use spaces instead of tabs in all buffers
 hook global BufNewFile  .* expandtab
 
+
+# Lean -----------------------------------------------------------------
+
+hook global BufCreate .*\.(lean) %{
+  set-option buffer filetype lean
+}
+
+hook -group lsp-filetype-lean global BufSetOption filetype=lean %{
+    lsp-inlay-diagnostics-enable buffer
+
+    set-face global InlayDiagnosticWarning yellow+di
+    set-face global InlayDiagnosticError red+di
+    set-face global InlayDiagnosticHint di
+    set-face global InlayDiagnosticInfo di
+
+    set-option global tabstop 2
+    set-option global indentwidth 2
+    set-option global softtabstop 2
+
+    hook -group lsp-filetype-lean buffer NormalIdle .* %{
+        lean-get-goal *goal*
+        lean-get-term-goal *term-goal*
+    }
+    hook -group lsp-filetype-lean buffer InsertIdle .* %{
+        lean-get-goal *goal*
+        lean-get-term-goal *term-goal*
+    }
+}
