@@ -65,22 +65,22 @@ def pipe-to-wlclipboard %{
 
 map global normal <c-/> ':comment-line<ret>'
 
-map global user h ':lsp-hover<ret>'           -docstring 'show hover information'
+map global user h ':lsp-hover<ret>'            -docstring 'show hover information'
 
 # custom function above
-map global user y ':pipe-to-wlclipboard<ret>' -docstring 'copy selection to wl-clipboard'
-map global user p '|wl-paste<ret>'            -docstring 'paste selection from wl-clipboard'
+map global user y ':pipe-to-wlclipboard<ret>'  -docstring 'copy selection to wl-clipboard'
+map global user p '|wl-paste<ret>'             -docstring 'paste selection from wl-clipboard'
 
 # kaklsp
-map global user s ':enter-user-mode lsp<ret>'
-map global user r ':lsp-rename-prompt<ret>'   -docstring 'rename hovered symbol'
+map global user s ':enter-user-mode lsp<ret>'  -docstring 'show LSP commands'
+map global user r ':lsp-rename-prompt<ret>'    -docstring 'rename hovered symbol'
 
-map global user e ':fzf-mode<ret>f'
-map global user b ':fzf-mode<ret>b'
+map global user e ':fzf-mode<ret>f'            -docstring 'select file from repository (fzf)'
+map global user b ':fzf-mode<ret>b'            -docstring 'select open buffer (fzf)'
 
-map global user d ':git show-diff<ret>'       -docstring 'show/update git diff'
-map global user l ':niri-new-window<ret>'     -docstring 'open new window to the right'
-map global user j ':niri-new-consume<ret>'    -docstring 'split window vertically'
+map global user d ':git show-diff<ret>'        -docstring 'show/update git diff'
+map global user l ':niri-new-window<ret>'      -docstring 'open new window to the right'
+map global user j ':niri-new-consume<ret>'     -docstring 'split window vertically'
 
 map global goto p '<esc>:buffer-previous<ret>' -docstring 'previous buffer'
 map global goto n '<esc>:buffer-next<ret>'     -docstring 'next buffer'
