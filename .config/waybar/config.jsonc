@@ -7,6 +7,7 @@
     ],
     "modules-center": [
         "clock",
+        "custom/calendar",
     ],
     "modules-right": [
         "bluetooth",
@@ -43,6 +44,14 @@
         "format": " {:%H:%M} ",
         "tooltip-format": " {:%d/%m/%Y} ",
         "interval": 10,
+    },
+    "custom/calendar": {
+        "format": " {} ",
+        "exec": "~/.local/bin/gcal.py waybar",
+        "return-type": "json",
+        "interval": 60,
+        "tooltip": true,
+        "on-click": "foot -H --title 'floating' ~/.local/bin/gcal",
     },
     "cpu": {
         "states": {

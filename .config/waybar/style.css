@@ -56,6 +56,20 @@ window#waybar {
   box-shadow: inset 0 2px #f2420c;
 }
 
+#custom-calendar.ongoing {
+  color: #9ece6a;
+  box-shadow: inset 0 2px #9ece6a;
+}
+
+#custom-calendar.soon {
+  color: #f2a827;
+  box-shadow: inset 0 2px #f2a827;
+}
+
+#custom-calendar.free {
+  color: rgba(150,230,255,.7);
+}
+
 button {
   box-shadow: none;
   text-shadow: none;
