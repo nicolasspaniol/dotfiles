@@ -89,6 +89,13 @@ cursor {
     hide-when-typing
 }
 
+recent-windows {
+    binds {
+        Alt+Tab       { next-window; }
+        Alt+Shift+Tab { previous-window; }
+    }
+}
+
 binds {
     Alt+Return repeat=false { spawn "footclient"; }
     Alt+Escape repeat=false { spawn "footclient" "--title" "floating" "uv" "run" ".local/bin/fzlauncher/fzlauncher"; }
@@ -102,8 +109,6 @@ binds {
     Alt+J { focus-window-or-workspace-down; }
     Alt+K { focus-window-or-workspace-up; }
     Alt+L { focus-column-right; }
-
-    Alt+Tab repeat=false { focus-workspace-previous; }
 
     // Window/column movement
     Alt+Shift+H { move-column-left; }
