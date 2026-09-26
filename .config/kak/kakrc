@@ -138,3 +138,16 @@ hook -group lsp-filetype-lean global BufSetOption filetype=lean %{
         lean-get-term-goal *term-goal*
     }
 }
+
+# Git --------------------------------------------------------------
+
+# update git diff, when enabled, on change
+hook global NormalIdle .* %{ try %{ git update-diff } }
+hook global InsertIdle .* %{ try %{ git update-diff } }
+
+# JSONC --------------------------------------------------------------
+
+# just so I have syntax highlighting for waybar config
+hook global BufCreate .*\.jsonc$ %{
+    set-option buffer filetype json
+}
