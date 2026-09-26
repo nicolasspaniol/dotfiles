@@ -244,6 +244,7 @@ overview {
 spawn-at-startup "systemctl" "--user" "import-environment" "WAYLAND_DISPLAY"
 
 spawn-at-startup "~/.local/bin/unset_empty_ws_name.sh"
+spawn-at-startup "~/.local/bin/niri_workspace_notify.sh"
 
 // Fixes some issues with Firefox dialogs. There may be a better solution
 spawn-sh-at-startup "dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY XAUTHORITY"

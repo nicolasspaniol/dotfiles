@@ -1,0 +1,22 @@
+# Position
+text-alignment=center
+anchor=top-center
+margin=10
+
+# Dark translucent style
+background-color=#1a1a1aCC
+text-color=#ffffff
+border-color=#555555
+border-size=1
+border-radius=10
+
+# Font
+font=JetBrainsMono Nerd Font 13
+
+# Sizing/padding
+padding=8
+width=200
+height=100
+
+# Behavior
+max-visible=1

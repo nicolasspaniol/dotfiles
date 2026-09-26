@@ -23,6 +23,8 @@
 !.config/xplr/**
 !.config/kak/
 !.config/kak/**
+!.config/mako/
+!.config/mako/**
 
 # 'runtime' is a symlink and its contents are not added to git. I'm ignoring it
 # so that its contents don't show up on helix file picker

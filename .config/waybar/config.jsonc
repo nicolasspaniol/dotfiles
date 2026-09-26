@@ -4,7 +4,8 @@
     "height": 30,
     "spacing": 4,
     "modules-left": [
-        "niri/workspaces",
+        "bluetooth",
+        "network",
     ],
     "modules-center": [
         "clock",
@@ -12,8 +13,6 @@
         "custom/calendar",
     ],
     "modules-right": [
-        "bluetooth",
-        "network",
         "pulseaudio",
         "battery",
     ],
