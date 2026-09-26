@@ -240,6 +240,9 @@ overview {
     }
 }
 
+// Needed in order to have "output" field set in waybar config
+spawn-at-startup "systemctl" "--user" "import-environment" "WAYLAND_DISPLAY"
+
 spawn-at-startup "~/.local/bin/unset_empty_ws_name.sh"
 
 // Fixes some issues with Firefox dialogs. There may be a better solution
