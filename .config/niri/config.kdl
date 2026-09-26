@@ -240,7 +240,6 @@ overview {
     }
 }
 
-spawn-sh-at-startup "swaybg -i ~/wallpaper.jpg -m fill"
 spawn-at-startup "~/.local/bin/unset_empty_ws_name.sh"
 
 // Fixes some issues with Firefox dialogs. There may be a better solution
