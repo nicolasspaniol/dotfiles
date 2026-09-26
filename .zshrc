@@ -71,6 +71,8 @@ alias gs="git status"
 alias gd="git diff --staged"
 alias xp="xplr"
 alias t="tree"
+alias ti="tree-diff.sh"
+alias oc="opencode"
 
 # Default options
 alias ls="ls --color=auto -A -v --group-directories-first"
