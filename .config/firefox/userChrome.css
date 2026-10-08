@@ -1,5 +1,3 @@
-html { min-width: 0 !important; }
-
 /* Hide some unimportant stuff from the toolbar */
 .titlebar-buttonbox-container,
 #page-action-buttons,
@@ -26,12 +24,4 @@ image.tab-icon-overlay[soundplaying] {
 /* Because I have a keyboard */
 #back-button, #forward-button {
   display: none !important;
-}
-
-#tabbrowser-tabbox {
-  box-shadow: none !important;
-  outline: 1px inset var(--tab-selected-outline-color) !important;
-  outline-offset: 0px;
-  overflow: hidden;
-  border-radius: 4px 0 0 0;
 }
