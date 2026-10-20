@@ -1,9 +1,11 @@
 # Ignore everything
 *
 
-# Except
+# Except:
+
 !.gitignore
 
+# Program configs
 !.config/
 !.config/systemd/
 !.config/systemd/**
@@ -26,11 +28,17 @@
 !.config/mako/
 !.config/mako/**
 
+# Some other configs to track
+!ly_config.ini
+!.zshrc
+!.config/opencode/cli.json
+
+!.local/
+!.local/bin/
+
+!tools/
+!tools/**
+
 # 'runtime' is a symlink and its contents are not added to git. I'm ignoring it
 # so that its contents don't show up on helix file picker
 .config/helix/runtime/**
-
-!ly_config.ini
-!.zshrc
-!.zprofile
-!.gitconfig

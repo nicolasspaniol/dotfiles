@@ -98,7 +98,7 @@ recent-windows {
 
 binds {
     Alt+Return repeat=false { spawn "footclient"; }
-    Alt+Escape repeat=false { spawn "footclient" "--title" "floating" "uv" "run" ".local/bin/fzlauncher/fzlauncher"; }
+    Alt+Escape repeat=false { spawn "footclient" "--title" "floating" "uv" "run" "tools/fzlauncher/fzlauncher"; }
     Alt+Space repeat=false { toggle-overview; }
     Alt+Backspace repeat=false { spawn "swaylock" "--image" "wallpaper.jpg" "--scaling" "fill"; }
 

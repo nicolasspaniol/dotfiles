@@ -76,7 +76,7 @@
     // custom
     "custom/calendar": {
         "format": " {} ",
-        "exec": "~/.local/bin/gcal.py waybar",
+        "exec": "cd ~/tools/google-calendar; uv run gcal waybar",
         "return-type": "json",
         "interval": 60,
         "tooltip": true,
