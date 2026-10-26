@@ -1,6 +1,6 @@
 /* Hide some unimportant stuff from the toolbar */
 .titlebar-buttonbox-container,
-#page-action-buttons,
+#urlbar-zoom-button, #reader-mode-button,
 #tracking-protection-icon-container {
   display: none !important;
 }
