@@ -63,42 +63,35 @@ def pipe-to-wlclipboard %{
 
 # Keybinds ------------------------------------------------------------
 
-map global normal <c-/> ':comment-line<ret>'
-
+# USER ---------
 map global user h ':lsp-hover<ret>'            -docstring 'show hover information'
-
 # custom function above
 map global user y ':pipe-to-wlclipboard<ret>'  -docstring 'copy selection to wl-clipboard'
 map global user p '|wl-paste<ret>'             -docstring 'paste selection from wl-clipboard'
-
 # kaklsp
 map global user s ':enter-user-mode lsp<ret>'  -docstring 'show LSP commands'
 map global user r ':lsp-rename-prompt<ret>'    -docstring 'rename hovered symbol'
-
 map global user e ':fzf-mode<ret>f'            -docstring 'select file from repository (fzf)'
 map global user b ':fzf-mode<ret>b'            -docstring 'select open buffer (fzf)'
-
 map global user d ':git show-diff<ret>'        -docstring 'show/update git diff'
 map global user l ':niri-new-window<ret>'      -docstring 'open new window to the right'
 map global user j ':niri-new-consume<ret>'     -docstring 'split window vertically'
+map global user p '|wl-paste<ret>'             -docstring 'paste selection from wl-clipboard'
 
+# GOTO ---------
 map global goto p '<esc>:buffer-previous<ret>' -docstring 'previous buffer'
 map global goto n '<esc>:buffer-next<ret>'     -docstring 'next buffer'
 
+# NORMAL ---------
+map global normal <c-/> ':comment-line<ret>'
 # Deletes/replaces without yanking
 map global normal d <a-d>
 map global normal c <a-c>
-
-map global user p '|wl-paste<ret>'             -docstring 'paste selection from wl-clipboard'
-
 # Extend selection up (inverse of shift+c)
 # Default is alt+c, but I can't use that
 map global normal D '<a-C>'
-
 map global normal <esc> '<esc>:jumpJump<ret>'
-
 map global normal N '<a-n>'
-
 # Makes search case insensitive by default (with caveats: see https://github.com/mawww/kakoune/issues/1272)
 map global normal '/' '/(?i)'
 
