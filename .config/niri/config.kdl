@@ -6,7 +6,7 @@ input {
             // Change keyboard
             layout "us,ru"
             variant "intl,"
-            options "caps:swapescape,numpad:mac,grp:win_space_toggle"
+            options "caps:escape,numpad:mac,grp:win_space_toggle"
         }
         numlock
     }
