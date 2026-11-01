@@ -1,0 +1,46 @@
+{
+  "$schema": "https://opencode.ai/v2/cli.json",
+  "theme": {
+    "name": "flexoki"
+  },
+  "session": {
+    "sidebar": "hide",
+    "markdown": "rendered",
+    "scrollbar": false,
+    "thinking": "hide",
+    "grouping": "auto",
+    "verbosity": "low",
+    "image_preview": false,
+    "tps": false,
+    "permissions": "prompt"
+  },
+  "keybinds": {
+    "command.palette.show": "ctrl+shift+p",
+    "session.background": "ctrl+shift+b",
+    "session.pin.toggle": "ctrl+shift+f",
+    "model.dialog.favorite": "alt+f",
+    "permission.prompt.fullscreen": "alt+shift+f",
+    "diff.page.up": "pageup",
+    "diff.page.down": "pagedown",
+    "input.move.left": "left,ctrl+b",
+    "input.move.right": "right,ctrl+f",
+    "prompt.history.previous": "up,ctrl+p",
+    "prompt.history.next": "down,ctrl+n",
+    "prompt.autocomplete.prev": "up,ctrl+p",
+    "prompt.autocomplete.next": "down,ctrl+n",
+    "session.new": "ctrl+t",
+    "session.tab.close": "ctrl+w",
+    "input.delete.word.backward": "ctrl+backspace,alt+backspace",
+    "dialog.select.prev": "up,ctrl+p",
+    "dialog.select.next": "down,ctrl+n"
+  },
+  "animations": false,
+  "tabs": {
+    "mode": "off",
+    "scope": "cwd",
+    "layout": "horizontal"
+  },
+  "terminal": {
+    "title": true
+  }
+}

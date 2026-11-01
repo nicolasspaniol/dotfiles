@@ -27,11 +27,12 @@
 !.config/kak/**
 !.config/mako/
 !.config/mako/**
+!.config/opencode/
+!.config/opencode/**
 
 # Some other configs to track
 !ly_config.ini
 !.zshrc
-!.config/opencode/cli.json
 
 !.local/
 !.local/bin/
